@@ -504,6 +504,7 @@
 <p>将各位的数值与权相乘后，再相加</p>
 <p>例如：1101.101B=？D</p>
 <p>原式=1 *2^3+1 *2^2+0 *2^1+1 *2^0 +1 *2^-1+0 *2^-2+1 *2^-3=13.625D</p>
+<hr>
 <h2 id="二-计算机中数的表示"><a href="#二-计算机中数的表示" class="headerlink" title="二.计算机中数的表示"></a>二.计算机中数的表示</h2><h3 id="1-符号的表示"><a href="#1-符号的表示" class="headerlink" title="1.符号的表示"></a>1.符号的表示</h3><p>一个带符号的二进制数由两部分组成。即数的符号部分与数的数值部分。</p>
 <p>在计算机中，我们约定<strong>0表示“+”，1表示“-”</strong>。</p>
 <p><img src="C:\Users\唐浩钏\AppData\Roaming\Typora\typora-user-images\image-20230904224232056.png" alt="image-20230904224232056"></p>
@@ -547,7 +548,203 @@
 <li><strong>中文信息编码（GB2312-80）</strong> </li>
 <li><strong>计算机内码</strong></li>
 </ol>
-<p><strong>（持续更新……）</strong></p>
+<h3 id="1-ASCII码"><a href="#1-ASCII码" class="headerlink" title="1.ASCII码"></a>1.ASCII码</h3><p>ASCII码有<strong>128</strong>个元素：<strong>大写字母26个，小写字母26个，数字符号10个，专用符号33个，控制符号33个</strong>。</p>
+<p>计算机中表示一个字符用八位二进制代码，即<strong>一个字节</strong>。</p>
+<p>用二进制编码需要使用七位:<br>$$<br>2^7=128<br>$$</p>
+<table>
+<thead>
+<tr>
+<th>b6b5b4              b3b2b1b0</th>
+<th>000</th>
+<th>001</th>
+<th>010</th>
+<th>011</th>
+<th>100</th>
+<th>101</th>
+<th>110</th>
+<th>111</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>0000</td>
+<td>NUL</td>
+<td>DEL</td>
+<td>SP</td>
+<td>0</td>
+<td>@</td>
+<td>P</td>
+<td></td>
+<td>p</td>
+</tr>
+<tr>
+<td>0001</td>
+<td>SOH</td>
+<td>DC1</td>
+<td>!</td>
+<td>1</td>
+<td>A</td>
+<td>Q</td>
+<td>a</td>
+<td>q</td>
+</tr>
+<tr>
+<td>0010</td>
+<td>STX</td>
+<td>DC2</td>
+<td>“</td>
+<td>2</td>
+<td>B</td>
+<td>R</td>
+<td>b</td>
+<td>r</td>
+</tr>
+<tr>
+<td>0011</td>
+<td>ETX</td>
+<td>DC3</td>
+<td>#</td>
+<td>3</td>
+<td>C</td>
+<td>S</td>
+<td>c</td>
+<td>d</td>
+</tr>
+<tr>
+<td>0100</td>
+<td>EQT</td>
+<td>DC4</td>
+<td>$</td>
+<td>4</td>
+<td>D</td>
+<td>T</td>
+<td>d</td>
+<td>t</td>
+</tr>
+<tr>
+<td>0101</td>
+<td>ENQ</td>
+<td>NAK</td>
+<td>%</td>
+<td>5</td>
+<td>E</td>
+<td>U</td>
+<td>e</td>
+<td>u</td>
+</tr>
+<tr>
+<td>0110</td>
+<td>ACK</td>
+<td>SYN</td>
+<td>&amp;</td>
+<td>6</td>
+<td>F</td>
+<td>V</td>
+<td>f</td>
+<td>v</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+<td>…</td>
+</tr>
+<tr>
+<td>1110</td>
+<td>SO</td>
+<td>RS</td>
+<td>.</td>
+<td>&gt;</td>
+<td>N</td>
+<td>]</td>
+<td>n</td>
+<td>~</td>
+</tr>
+<tr>
+<td>1111</td>
+<td>SI</td>
+<td>US</td>
+<td>/</td>
+<td>?</td>
+<td>O</td>
+<td>_</td>
+<td>o</td>
+<td>DEL</td>
+</tr>
+</tbody></table>
+<p>从表中可以看出：</p>
+<p>A=1000001B = 65D</p>
+<p>a=1100001B = 97D</p>
+<ul>
+<li><p><strong>控制字符&lt;数字符号&lt;大写字符&lt;小写字母</strong>；</p>
+</li>
+<li><p><strong>大写的A<del>Z,小写的a</del>z,数字0~9依次递增</strong>；</p>
+</li>
+<li><p>**小写的字母的ASCII码比对应的大写字母的ASCII大20H(32D)**。</p>
+</li>
+</ul>
+<h3 id="2-中文信息编码"><a href="#2-中文信息编码" class="headerlink" title="2.中文信息编码"></a>2.中文信息编码</h3><p>常用汉字基数在3000~5000，因此无法用一个字节区别，所以汉字汉字编码由两个字节组成。</p>
+<h3 id="3-机器内码"><a href="#3-机器内码" class="headerlink" title="3.机器内码"></a>3.机器内码</h3><p>（1）是系统内部处理和存储汉字时使用的代码。</p>
+<p>（2）是二进制编码。</p>
+<p>（3）一个汉字用两个字节表示，两个字节的<strong>最高位为1</strong>。</p>
+<hr>
+<h2 id="四-计算机中的逻辑运算"><a href="#四-计算机中的逻辑运算" class="headerlink" title="四.计算机中的逻辑运算"></a>四.计算机中的逻辑运算</h2><h3 id="1-基本逻辑运算"><a href="#1-基本逻辑运算" class="headerlink" title="1.基本逻辑运算"></a>1.基本逻辑运算</h3><ul>
+<li>“与”逻辑运算</li>
+<li>“或”逻辑运算</li>
+<li>“非“逻辑运算</li>
+</ul>
+<h3 id="2-逻辑门"><a href="#2-逻辑门" class="headerlink" title="2.逻辑门"></a>2.逻辑门</h3><h4 id="1-简单逻辑门电路"><a href="#1-简单逻辑门电路" class="headerlink" title="1.简单逻辑门电路"></a>1.简单逻辑门电路</h4><p>简单门电路是指只有单一逻辑功能的门电路，如“或”门、“与”门和“非”门。 </p>
+<h4 id="2-复合逻辑门电路"><a href="#2-复合逻辑门电路" class="headerlink" title="2.复合逻辑门电路"></a>2.复合逻辑门电路</h4><p>复合门电路是指具有两种以上逻辑功能的门电路，如“与非”门、“或非”门、“与或非”门或“异或”门等。</p>
+<h3 id="3-计算机中的逻辑部件"><a href="#3-计算机中的逻辑部件" class="headerlink" title="3.计算机中的逻辑部件"></a>3.计算机中的逻辑部件</h3><h4 id="1-利用”与非门“实现一位二进制加法"><a href="#1-利用”与非门“实现一位二进制加法" class="headerlink" title="1.利用”与非门“实现一位二进制加法"></a>1.利用”与非门“实现一位二进制加法</h4><table>
+<thead>
+<tr>
+<th>输入</th>
+<th>A</th>
+<th>0</th>
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>输入</td>
+<td>B</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>输出</td>
+<td>P</td>
+<td>01</td>
+<td>01</td>
+<td>01</td>
+<td>高10</td>
+</tr>
+</tbody></table>
+<h4 id="2-实现一位二进制减法"><a href="#2-实现一位二进制减法" class="headerlink" title="2.实现一位二进制减法"></a>2.实现一位二进制减法</h4><p>例如：7D-9D=(-2)D,假设机器为8位机。</p>
+<p>7D-9D=7D补码+（-9D）补码</p>
+<p>7D=111B	9D=1001B</p>
+<p>7D原码=0,0000111	-9D原码=1,0001001</p>
+<p>7D反码=0,0000111	-9D反码=1,1110110</p>
+<p>7D补码=0,0000111	-9D补码=1,1110111</p>
+<p>(-2)D补码=1,1111110	(-2)D反码=1,1111101</p>
+<p>(-2)D原码=1,0000010</p>
+<hr>
+<h2 id="五-计算机的工作原理"><a href="#五-计算机的工作原理" class="headerlink" title="五.计算机的工作原理"></a>五.计算机的工作原理</h2><p>根据冯·诺依曼设计思想：计算机的工作原理都是“存储程序控制原理”，其主要内容是：</p>
+<ul>
+<li><p>为了充分发挥电子元件的高速性能，   计算机的内部应采用<strong>二进制</strong>指令和数据；</p>
+</li>
+<li><p><strong>指令和数据都能存储</strong>起来，供计算机<strong>自动执行；</strong></p>
+</li>
+<li><p>计算机由五大部件组成：<strong>运算器、控制器、存储器、输入设备和输出设备</strong>。</p>
+</li>
+</ul>
 
                 
             </div>
