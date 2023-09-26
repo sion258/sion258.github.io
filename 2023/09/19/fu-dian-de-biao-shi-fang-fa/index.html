@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="快速上手Java, SION&#39;S BLOG">
+    <meta name="keywords" content="浮点数的表示方法, SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>快速上手Java | SION&#39;S BLOG</title>
+    <title>浮点数的表示方法 | SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">快速上手Java</h1>
+                    <h1 class="description center-align post-title">浮点数的表示方法</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Java/">
-                                <span class="chip bg-color">Java</span>
+                            <a href="/tags/Computer-science/">
+                                <span class="chip bg-color">Computer science</span>
                             </a>
                         
                     </div>
@@ -449,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-09
+                    2023-09-19
                 </div>
                 
 
@@ -473,143 +473,68 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="快速上手Java"><a href="#快速上手Java" class="headerlink" title="快速上手Java"></a>快速上手Java</h1><h2 id="一-基本数据类型与数组"><a href="#一-基本数据类型与数组" class="headerlink" title="一. 基本数据类型与数组"></a>一. 基本数据类型与数组</h2><h3 id="1-1-标识符和关键字"><a href="#1-1-标识符和关键字" class="headerlink" title="1.1 标识符和关键字"></a>1.1 标识符和关键字</h3><ul>
-<li><p>标识符： 用来标识类名，变量名，方法名，类型名，数组名，</p>
-<p>文件名的有效字符。注意第一个字符不能是数字，<strong>不能是关键</strong></p>
-<p><strong>字，不能是true，false和null</strong>，能使用字母，下划线，美元符</p>
-<p>号和数字组成。</p>
-</li>
-<li><p>Unicode字符集</p>
-</li>
-<li><p>关键字</p>
-</li>
-</ul>
-<h3 id="1-2-基本数据类型及其转换"><a href="#1-2-基本数据类型及其转换" class="headerlink" title="1.2 基本数据类型及其转换"></a>1.2 基本数据类型及其转换</h3><h4 id="逻辑类型"><a href="#逻辑类型" class="headerlink" title="逻辑类型"></a>逻辑类型</h4><p>包含<strong>常量</strong>true，false。Java提供关键字<strong>boolean</strong>来声明逻辑<strong>变量</strong>，声明可以赋初值</p>
-<pre class="line-numbers language-none"><code class="language-none">boolean male = true，on = true，off = false，isTrianle;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h4 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h4><ul>
-<li>int：包含常量123，6000（十进制），077（八进制），0x3ABC（十六进制）。使用关键字int来声明变量。</li>
-<li>byte：使用关键字byte来声明byte型变量。（不存在常量表示法）</li>
-<li>short：使用关键字short来声明short型变量，同byte没有常量表示。</li>
-<li>long：long型常量用<strong>后缀L</strong>来表示，例如108L(十进制)、07123L(八进制)、0x3ABCL(十六进制)。变量：使用关键字long来声明long型变量。</li>
-</ul>
-<h4 id="浮点数类型"><a href="#浮点数类型" class="headerlink" title="浮点数类型"></a>浮点数类型</h4><ul>
-<li>float： 单精度浮点数类型。453.5439f,21379.987F,231.0f(小数表示法),2e40f(2乘10的40次方，指数表示法)。需要特别注意的是<strong>常量后面必须要有后缀f或F</strong>。变量：使用关键字float来声明：</li>
-</ul>
-<pre class="line-numbers language-none"><code class="language-none">float f = 114.514f<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-
-
-<h4 id="字符类型"><a href="#字符类型" class="headerlink" title="字符类型"></a>字符类型</h4><p>常量：’A’,’b’,’?’,!’,’9,’好’,’t’,’’等，即用单引号(需用英文输入法输入)括</p>
-<p>起的Unicode表中的一个字符。</p>
-<p>变量：使用关键字char来声明char型变量，例如：</p>
-<pre class="line-numbers language-none"><code class="language-none">char ch = '先辈suki'，ch2 = '请和我交往';<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="类型转换运算"><a href="#类型转换运算" class="headerlink" title="类型转换运算"></a>类型转换运算</h4><p>在Java中把低精度类型的变量的值赋给级别高的变量的时候，会自动完成数据类型的转换：</p>
-<pre class="line-numbers language-none"><code class="language-none">int x = 10;
-float y = x;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>会输出50.0。</p>
-<p>当把精度高的赋给精度低的变量时，可以使用如下格式：</p>
-<pre class="line-numbers language-none"><code class="language-none">（类型名）要转换的 变量<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>例如：</p>
-<pre class="line-numbers language-none"><code class="language-none">int x = (int)114.514f;
-long y = (long)114.514f;
-int z = (int)114514L;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>特别地，当把高精度变量的值赋给低精度变量的值，不能够超出这些变量的取值范围，否则会导致精度的损失：</p>
-<pre class="line-numbers language-none"><code class="language-none">byte a = (byte)128
-输出：-128
-byte b = (byte)-129
-输出：127<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h3 id="1-4-输入输出"><a href="#1-4-输入输出" class="headerlink" title="1.4 输入输出"></a>1.4 输入输出</h3><h4 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h4><p>Java的java.until.Scanner类库提供Scanner类来进行输入操作：</p>
-<pre class="line-numbers language-none"><code class="language-none">Scanner reader = new Scanner(System.in);<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>我们对该类创建了一个对象reader，接着我们可以调用一些方法读取键入的各种基本数据：</p>
-<pre class="line-numbers language-none"><code class="language-none">nextBoolean(),nextByte(),nextShort(),nextInt(),nextLong(),nextFloat (),nextDouble()<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h4 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h4><p>使用</p>
-<pre class="line-numbers language-none"><code class="language-none">System.out.println("原神启动")；
-System.out.print("原神启动")；<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-
-<p>前者输入“原神启动”后换行，后者不换。相当于“\n”的作用。注意输出字符串不能出现换行。</p>
-<h3 id="1-5-数组"><a href="#1-5-数组" class="headerlink" title="1.5 数组"></a>1.5 数组</h3><h4 id="数组的声明"><a href="#数组的声明" class="headerlink" title="数组的声明"></a>数组的声明</h4><pre class="line-numbers language-none"><code class="language-none">数组的元素类型 []数组名
-数组的元素类型 数组名[]
-
-数组的元素类型 数组名[][]
-数组的元素类型 [][]数组名<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>例如：</p>
-<pre class="line-numbers language-none"><code class="language-none">int a[]
-int []b
-float [][]d<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p><strong>注意Java不能声明数组大小</strong></p>
-<h4 id="分配元素"><a href="#分配元素" class="headerlink" title="分配元素"></a>分配元素</h4><p>直接上示例：</p>
-<pre class="line-numbers language-none"><code class="language-none">a = new int[4];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>声明了一个大小为10的int类型数组。</p>
-<pre class="line-numbers language-none"><code class="language-none">a[0] = 1;
-a[1] = 2;
-a[2] = 3;
-a[3] = 4;
-a[4] = 5;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>变量a中存放着这些元素的首地址，该地址称为数组的引用，因此数组是引用型变量，可以通过索引使用分配给他的变量。</p>
-<p>二维数组同理：</p>
-<pre class="line-numbers language-none"><code class="language-none">c = new int[3][2];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>创建了一个二维数组，可以看作是3个长度为2的一维数组，当然，我们也可以不限定一维数组的长度：</p>
-<pre class="line-numbers language-none"><code class="language-none">d = new int[3][];<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>创建了d[0],d[1],d[2]，长度没有确定。可以单独确定：</p>
-<pre class="line-numbers language-none"><code class="language-none">d[0] = new int [2];
-d[1] = new int [3];
-d[2] = new int [4];<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-
-<p>三个一维数组长度分别是2，3，4。</p>
-<h4 id="数组的初始化"><a href="#数组的初始化" class="headerlink" title="数组的初始化"></a>数组的初始化</h4><p>数组是引用型变量，两个有<strong>相同的引用的同类型的数组</strong>有完全相同的元素。</p>
-<pre class="line-numbers language-none"><code class="language-none">int a[] = {1,2,3,4},b[] = {4,5};<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>两个数组的首地址不同。如果使用下列赋值语句：</p>
-<pre class="line-numbers language-none"><code class="language-none">a = b;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>那么a的引用和b相同，系统释放分配给a的元素，使得a的元素和b相同，记住是<strong>与等号右边的b相同</strong>。</p>
-<p>示例代码：</p>
-<pre class="line-numbers language-none"><code class="language-none">public class Example {
-    public static void main(String args[]){b[0]=100,b[1]=200,b[2]=300
-        int a[]={1,2,3,4};
-        int b[]={100,200,300};
-        System.out.println("数组a的元素个数="+a.length);
-        System.out.println("数组b的元素个数="+b.length);
-        system.out.println("数组a的引用="+a);
-        system.out.println("数组b的引用="+b);
-        a = b;
-        System.out.println("数组a的元素个数="+a.length);
-        System.out.println("数组b的元素个数="+b.length);
-        System.out.println("a[0]="+a[0]+",a[1]="+a[1]+",a[2]="+a[2]);
-        System.out.print("b[0]="+b[0]+",b[1]="+b[1]+",b[2]="+b[2]);
-    }
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>输出：</p>
-<pre class="line-numbers language-none"><code class="language-none">数组a的元素个数=4
-数组b的元素个数=3
-数组a的引用=[I@deGced 
-数组b的引用=[I@c17164 
-数组a的元素个数=3
-数组b的元素个数=3
-a[0]=100,a[1]=200,a[2]=300 
-b[0]=100,b[1]=200,b[2]=300<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>直接打印a能得到引用（首地址）。</p>
-<h3 id="应用举例–二分搜索（Binary-Search）"><a href="#应用举例–二分搜索（Binary-Search）" class="headerlink" title="应用举例–二分搜索（Binary Search）"></a>应用举例–二分搜索（Binary Search）</h3><p>见下篇博客</p>
+                <h1 id="浮点的表示方式"><a href="#浮点的表示方式" class="headerlink" title="浮点的表示方式"></a>浮点的表示方式</h1><p>浮点的表示方法我在我前面发布的《计算机工作原理》中简单说明了，这里我们详细讲一下它的单精度（float）和双精度（double）表示方法。</p>
+<h2 id="单精度（float）"><a href="#单精度（float）" class="headerlink" title="单精度（float）"></a>单精度（float）</h2><p>单精度浮点数拥有4个字节（byte），即32位的存储空间，其中1位用来存储符号，称为符号位（Sign），8位的阶码（exponent），23位的尾码（mantissa）。</p>
+<p>数值范围：-3.4E38~3.4E38（E就是10）。</p>
+<p>例如，求5.25在计算机中的存储表示。、</p>
+<p> 整数部分：5/2=2…1</p>
+<p>2/2=1…0 </p>
+<p>1/2=0…1</p>
+<p>so整数部分101</p>
+<p>小数部分：0.25*2=0.5</p>
+<p>0.5*2=1</p>
+<p>so小数部分0.01</p>
+<p>so5.25D=101.01B</p>
+<p>101.01=1.0101*2^2</p>
+<p>阶码的真值就是2+127=129=128+1（这样表示有好处）</p>
+<p>尾码就是0101（隐藏整数部分，称为隐藏位）</p>
+<h2 id="双精度（double）"><a href="#双精度（double）" class="headerlink" title="双精度（double）"></a>双精度（double）</h2><p>区别在于存储空间从4个字节变为了8个字节（64位）。包含符号位1位，阶码11位，尾数52位，数值范围也变大了：-2.23E308~1.79E308（E就是10）。</p>
+<h2 id="IEEE-754标准"><a href="#IEEE-754标准" class="headerlink" title="IEEE 754标准"></a>IEEE 754标准</h2><p>float和double浮点是表示都遵从IEEE标准：</p>
+<p><strong>S（sign）+阶码（component，含阶符）+小数点位置+尾数（mantissa）</strong></p>
+<p>除了float和double还有一种临时实数类型浮点数：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>符号位</th>
+<th>阶码</th>
+<th>尾数</th>
+<th>总位数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>短实数</td>
+<td>1</td>
+<td>8</td>
+<td>23</td>
+<td>32</td>
+</tr>
+<tr>
+<td>长实数</td>
+<td>1</td>
+<td>11</td>
+<td>52</td>
+<td>64</td>
+</tr>
+<tr>
+<td>临时实数</td>
+<td>1</td>
+<td>15</td>
+<td>64</td>
+<td>80</td>
+</tr>
+</tbody></table>
+<p>用S表示数符，E表示阶码，M表示尾数。</p>
+<p>需要强调的是，阶码都用移码表示，所以阶码的真值都需要加上一个127（偏移量），不同精度的浮点数的偏移量不同（<strong>短实数是127，长实数是1023，临时实数是16383</strong>）。</p>
+<p>取值范围取决于阶码，精度取决于尾数占的位数。</p>
+<p>还是举之前的例子：5.25</p>
+<p>前面得到了尾码M=0101</p>
+<p>偏移量E = 2 + 127 =128 + 1 = 100001B</p>
+<p>所以存储的二进制表示为：</p>
+<p>01000010101000000…</p>
+<p>每4个为一组，转换为16进制：</p>
+<p>（4 2 A 00000）H</p>
+<p>4是0100的十六进制表示，2是0010的十六进制表示，A是1010的十六进制表示，后面补位到8位。</p>
 
                 
             </div>
@@ -636,7 +561,7 @@ b[0]=100,b[1]=200,b[2]=300<span aria-hidden="true" class="line-numbers-rows"><sp
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/09/09/kuai-su-shang-shou-java/">https://sion258.github.io/2023/09/09/kuai-su-shang-shou-java/</a>
+                    <a href="https://sion258.github.io/2023/09/19/fu-dian-de-biao-shi-fang-fa/">https://sion258.github.io/2023/09/19/fu-dian-de-biao-shi-fang-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -674,8 +599,8 @@ b[0]=100,b[1]=200,b[2]=300<span aria-hidden="true" class="line-numbers-rows"><sp
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Java/">
-                                    <span class="chip bg-color">Java</span>
+                                <a href="/tags/Computer-science/">
+                                    <span class="chip bg-color">Computer science</span>
                                 </a>
                             
                         </div>
@@ -849,13 +774,13 @@ b[0]=100,b[1]=200,b[2]=300<span aria-hidden="true" class="line-numbers-rows"><sp
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/09/19/fu-dian-de-biao-shi-fang-fa/">
+                <a href="/2023/09/26/yi-wei-quan-jia-qi-fulladder/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="浮点数的表示方法">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="Full Adder">
                         
-                        <span class="card-title">浮点数的表示方法</span>
+                        <span class="card-title">Full Adder</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -866,7 +791,7 @@ b[0]=100,b[1]=200,b[2]=300<span aria-hidden="true" class="line-numbers-rows"><sp
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-19
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-09-26
                         </span>
                         <span class="publish-author">
                             
@@ -894,13 +819,13 @@ b[0]=100,b[1]=200,b[2]=300<span aria-hidden="true" class="line-numbers-rows"><sp
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/07/java-ru-men/">
+                <a href="/2023/09/09/kuai-su-shang-shou-java/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="Java入门">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="快速上手Java">
                         
-                        <span class="card-title">Java入门</span>
+                        <span class="card-title">快速上手Java</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -911,7 +836,7 @@ b[0]=100,b[1]=200,b[2]=300<span aria-hidden="true" class="line-numbers-rows"><sp
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-09
                             </span>
                         <span class="publish-author">
                             
