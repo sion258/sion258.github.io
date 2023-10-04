@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Full Adder, SION&#39;S BLOG">
+    <meta name="keywords" content="SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Full Adder | SION&#39;S BLOG</title>
+    <title>SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Full Adder</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -431,13 +431,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/Computer-science/">
-                                <span class="chip bg-color">Computer science</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -449,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-26
+                    2023-10-03
                 </div>
                 
 
@@ -473,88 +469,143 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="一位全加器（Full-Adder）"><a href="#一位全加器（Full-Adder）" class="headerlink" title="一位全加器（Full Adder）"></a>一位全加器（Full Adder）</h1><p>对于一位二进制加法而言：</p>
-<p>0 + 0 = 0</p>
-<p>0 + 1 = 1</p>
-<p>1 + 0 = 1</p>
-<p>1 + 1 = 0</p>
-<p>我们可以联想到<strong>异或运算</strong>：<br>$$<br>S = X \bigoplus Y<br>$$<br>这样，我们就从算术运算转化为<strong>逻辑运算</strong>，这样通过异或门实现一位加法的电路叫做<strong>半加器（Half Adder）</strong>。</p>
-<p>但是，半加器只能实现和数的运算，对于 1 + 1 = 10的进位运算，我们需要用到<strong>全加器（Full Adder）</strong>。</p>
-<table>
-<thead>
-<tr>
-<th align="center">X(i)</th>
-<th align="center">Y(i)</th>
-<th align="center">C1(i)</th>
-<th align="center">和数S(i)</th>
-<th align="center">C(i+1)</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">1</td>
-</tr>
-</tbody></table>
-<p>由上表我们可以得到：<br>$$<br>S = X_i \bigoplus Y_i \bigoplus C_i<br>$$</p>
-<p>$$<br>C_{i+1} = X_iY_i + C_i(X_i \bigoplus Y_i)<br>$$</p>
-<p>我们可以表示成：</p>
-<p><img src="C:\Users\唐浩钏\AppData\Roaming\Typora\typora-user-images\image-20230926200601702.png" alt="image-20230926200601702">内部电路如图所示：</p>
-<p><img src="C:\Users\唐浩钏\AppData\Roaming\Typora\typora-user-images\image-20230926202140289.png" alt="image-20230926202140289"></p>
-<p>对于n位加法器而言，是由n个一位全加器<strong>串联</strong>得到的：</p>
-<p><img src="C:\Users\唐浩钏\AppData\Roaming\Typora\typora-user-images\image-20230926202341212.png" alt="image-20230926202341212"></p>
-<p>低位进位的Ci+1连接到高位Ci。</p>
+                <h1 id="线性时间排序"><a href="#线性时间排序" class="headerlink" title="线性时间排序"></a>线性时间排序</h1><h2 id="一-比较排序算法的下界和决策树模型"><a href="#一-比较排序算法的下界和决策树模型" class="headerlink" title="一. 比较排序算法的下界和决策树模型"></a>一. 比较排序算法的下界和决策树模型</h2><p>在我们之前了解的排序算法中，都<strong>依赖于元素之间的比较</strong>，我们称这些排序方法为<strong>比较排序（comparsion sort）</strong>.</p>
+<p>给你几分钟回忆一下我们学过的排序方法的时间复杂度为多少？</p>
+<p>对于n个元素的输入序列：</p>
+<ul>
+<li>插入排序O(n^2)</li>
+<li>归并排序O(nlgn)</li>
+<li>推排序O(nlgn)</li>
+<li>快速排序O(nlgn)</li>
+</ul>
+<p>其中快速排序在划分为0和n-1时的情况下退化为O(n^2),随机化快速排序为O(nlgn)，其中归并排序和堆排序在最坏的情况下仍要经过下界Omega(nlgn)次比较，因此<strong>归并排序和推排序都是渐进最优的</strong>。</p>
+<p>那么所有的比较排序的比较次数的至少是Omega(nlgn)吗？有没有比O(nlgn)更快的排序算法呢？</p>
+<p>我们借助决策树(Decision Tree)来进行分析。</p>
+<p>例如，对于一个三元素序列，我们可以将其比较排序的方式抽象为：</p>
+<img src="C:\Users\唐浩钏\document\python\决策树分析比较排序.png" alt="决策树分析比较排序" style="zoom:200%;">
+
+<p>可以观察到这棵树的叶子节点包含了所有的可能的比较情况，对于3个元素的比较，至少包含3！的可能的排序。合理外推，可以得到对于n个元素的比较，包含n！种的可能排序，即n！个叶子节点。</p>
+<p>在树中，最坏的情况对应最多的比较次数，观察决策树，我们可以发现比较次数即到达一个叶子节点的高度，最坏的情况对应最深的叶子节点，即这个决策树的高，记作h。在一个二叉树中，<strong>叶子节点最多</strong>的情况就是这个树是一棵<strong>满二叉树</strong>，当一个棵树是满二叉树时，叶子节点为2^h,因此决策树的叶子节点l至多为2^h。那么决策树的叶子节点l满足：<br>$$<br>n!&lt;=l&lt;=2^h<br>$$<br>则<br>$$<br>h&gt;=lg(n!)<br>$$<br>由<strong>斯特林公式(Stirling’s approximation)</strong><br>$$<br>n!\approx\ \sqrt{2\pi n}(\frac{n}{e})^n<br>$$<br>可以化简得到：<br>$$<br>h = \omega(nlgn)<br>$$<br><strong>我们可以发现比较次数至少为nlgn，所以所有的比较排序的下界Omega(nlgn)。</strong></p>
+<p><strong>由于归并排序和堆排序的运行时间上界为O(nlgn),所以他们是渐进最优的比较排序方法</strong>。</p>
+<hr>
+<p><strong>那么有没有运行时间更小的排序算法呢？</strong></p>
+<h2 id="二-线性时间的排序算法"><a href="#二-线性时间的排序算法" class="headerlink" title="二. 线性时间的排序算法"></a>二. 线性时间的排序算法</h2><h3 id="1-计数排序"><a href="#1-计数排序" class="headerlink" title="1. 计数排序"></a>1. 计数排序</h3><h4 id="1-1-原理"><a href="#1-1-原理" class="headerlink" title="1.1 原理"></a>1.1 原理</h4><p>想象一下，不利用数与数之间的比较，是否能实现一组输入序列的排序？</p>
+<p>比如有一组数&lt;2,3,4,1,5&gt;,有5个元素，范围1~5，比5小的数有4个，那么5应该在第五个元素的位置上，4应该在第四个元素的位置上，…,1应该在第1的位置上。那么对于一个元素x，确定比x小的元素的个数，可以确定x在输出序列的位置。</p>
+<p>所以，已知一个输入序列在0~k的范围内，通过分配k个计数器，统计输入序列中的元素i在第i个计数器上的出现次数，将计数器求前缀和，就有了每一个元素在输出序列的具体位置。</p>
+<h4 id="1-2-代码"><a href="#1-2-代码" class="headerlink" title="1.2 代码"></a>1.2 代码</h4><p>知道了思想，我们可以写出相应的实现过程，这里我将写出计数排序的java实现：</p>
+<pre class="line-numbers language-none"><code class="language-none">public static  CountingSort(int[] a){
+	int[] c = new int[max(a)];
+	int[] b = new int[a.length];
+	
+	for(int i = 1;i &lt;= a.length;i++){
+		int j = a[i];
+		c[j]++;
+	}
+	for(int i = 1;i &lt;= max(a);i++){
+		c[i] = c[i-1]+c[i]l;
+	}
+	for(int i = a.length;i&gt;=1;i++){
+		int j = a[i];
+		b[c[j]]= a[i];
+		c[j]——；
+	}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>下面是分步图解：</p>
+<p><img src="C:\Users\唐浩钏\document\python\计数排序图解.png" alt="计数排序图解"></p>
+<p>我们新立数组c来作为计数器，<strong>长度为a的最大值</strong>，因为我们要对0~k的每一个数都设立计数器<strong>统计每个数出现的次数</strong>，随后<strong>求前缀和为更新的c数组</strong>，以确定各个数在输出数组b出现的位置，之后从a.length开始遍历，每遍历一个a[i],找到统计该a[i]的计数器c[a[i]]，此时更新为前缀和的数组c代表的是其下标，也就是a[i]，在输出序列的位置，所以我们将<strong>a[i]的值赋给b[c[a[i]]]<strong>，c[a[i]]代表的</strong>a[i]的计数器减一</strong>，表示已经等于a[i]的值输出过一次，下一次遍历到与a[i]相同的值的时候会把这个值放在a[i]的前一位。</p>
+<h4 id="1-3-性能分析"><a href="#1-3-性能分析" class="headerlink" title="1.3 性能分析"></a>1.3 性能分析</h4><p>计数排序的时间复杂度是多少呢？</p>
+<p>第一个for循环的时间复杂度是O(n)，第二个for循环的时间复杂度为O(k)，第三个循环的时间复杂度为O(n)。因此，计数排序的时间复杂度可以用<strong>O(n+k)来表示</strong>。</p>
+<p><strong>它是稳定的。这是因为相同序列的值在输出序列中的相对位置和在输出序列中相同</strong>。换言之，对于两个相同的数，先出现在输入序列中的数在输出序列中也先出现。</p>
+<p>我们看到，计数排序的时间复杂度已经低于了比较排序的时间复杂度下界Omega(nlgn),但是开辟了一个k大小的数组c，因此**空间复杂度为O(k)**。</p>
+<p>但是，当k较小时，此算法的性能不错，但是当k，譬如k=n^2之类，此算法的性能大大下降，因此对于大数之间的比较，计数算法不合适。</p>
+<p>因此计数排序算法常常作为一个子过程在基数排序(radix sort)中.</p>
+<h3 id="2-基数排序"><a href="#2-基数排序" class="headerlink" title="2. 基数排序"></a>2. 基数排序</h3><h4 id="2-1-原理"><a href="#2-1-原理" class="headerlink" title="2.1 原理"></a>2.1 原理</h4><p>想想如何对几个已知年月日的日期排序？</p>
+<p>2023.9.27</p>
+<p>2023.8.21</p>
+<p>2010.8.23</p>
+<p>2077.8.31</p>
+<p>我们可以从日期开始进行排序，比如我们在这里从小到大排序：</p>
+<p>2023.8.21</p>
+<p>2010.8.23</p>
+<p>2023.9.27</p>
+<p>2077.8.31</p>
+<p>接着对月份排序：</p>
+<p>2023.8.21</p>
+<p>2010.8.23</p>
+<p>2077.8.31</p>
+<p>2023.9.27</p>
+<p>接着对年份排序</p>
+<p>2010.8.23</p>
+<p>2023.8.21</p>
+<p>2023.9.27</p>
+<p>2077.8.31</p>
+<p>我们可以发现从最小位对其所有“位”排序之后，我们得到了正确的顺序1，这就是基数排序的基本思想。</p>
+<p>从最低有效位排序，接着向高位排序，结果即是排序好的结果。</p>
+<p>根据原理而言，我们需要选择一个稳定的排序方法作为每一位的排序方法，比如上面的排序过程，<strong>有两个为2023的年份，排序结果必须与上一位排序的相对位置相同</strong>，即2023.8在2023.9之前。</p>
+<p>所以<strong>我们需要一个稳定的排序方法</strong>，比如对十进制数的排序，每一位数在0~9之间，范围不大，所以我们可以<strong>选择计数排序作为每一位的排序方法</strong>。</p>
+<h4 id="2-2-代码"><a href="#2-2-代码" class="headerlink" title="2.2 代码"></a>2.2 代码</h4><pre class="line-numbers language-none"><code class="language-none">public class RadixSort {
+
+    // 获取数组中最大的数
+    public static int getMax(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i &lt; arr.length; i++) {
+            if (arr[i] &gt; max) {
+                max = arr[i];
+            }
+        }
+        return max;
+    }
+
+    // 使用计数排序对数组按照指定的位数进行排序
+    public static void countingSort(int[] arr, int exp) {
+        int n = arr.length;
+        int[] output = new int[n];
+        int[] count = new int[10];
+        Arrays.fill(count, 0);
+
+        // 统计每个数字的出现次数
+        for (int i = 0; i &lt; n; i++) {
+            count[(arr[i] / exp) % 10]++;
+        }
+
+        // 计算每个数字应该在输出数组中的位置
+        for (int i = 1; i &lt; 10; i++) {
+            count[i] += count[i - 1];
+        }
+
+        // 构建输出数组
+        for (int i = n - 1; i &gt;= 0; i--) {
+            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
+            count[(arr[i] / exp) % 10]--;
+        }
+
+        // 将输出数组复制到原始数组中
+        for (int i = 0; i &lt; n; i++) {
+            arr[i] = output[i];
+        }
+    }
+
+    // 使用基数排序对数组进行排序
+    public static void radixSort(int[] arr) {
+        int max = getMax(arr);
+
+        // 从最低位到最高位依次进行排序
+        for (int exp = 1; max / exp &gt; 0; exp *= 10) {
+            countingSort(arr, exp);
+        }
+    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="2-3-性能分析"><a href="#2-3-性能分析" class="headerlink" title="2.3 性能分析"></a>2.3 性能分析</h4><p>​    如果基数排序使用的稳定的排序方式(以计数排序为例)的时间复杂度为O(n+k)，最大位数为d，那么基数排序的时间复杂度为**O(d(n+k))**。因为每一轮消耗的时间为O(n+k),有d位数，那么就进行d轮。</p>
+<h4 id="2-4-拓展"><a href="#2-4-拓展" class="headerlink" title="2.4 拓展"></a>2.4 拓展</h4><p>为了减少k的大小，我们可以将要比较的数转换为二进制，这样k的大小为1，大大减小了k的的大小和计数排序的时间复杂度，但是位数将展开得非常大，如何在二者之间取平衡呢？</p>
+<p>假设被排序的数换算成b个bit(b位数)，我们可以将多位合成一组，假如r个bit一组，那么可以看作b/r个r位数，那么计数排序的轮数就是b/r轮，每一位数在范围0~2^r-1内，那么时间复杂度可以表示为：<br>$$<br>O((b/r)(n+2^r))<br>$$<br>由于位数b和元素个数n给定，我们是否能找到一个r使得时间复杂度最低？</p>
+<p>如果b&lt;=lgn,对于任何满足r&lt;=b的r，都有n+2^r=O(n),因此当b=r时，有渐进意义最优的O((b/r)(n+2^r)) = O(n)；</p>
+<p>如果b&gt;lgn,r&lt;=lgn,都有n+2^r = O(n)，当r = lgn，时间复杂度为O(bn/lgn)，接下来如果r变大，分子2^r增大的速度大于分母r增大的速度，所以这时候的时间复杂度大于O(bn/lgn)；相反r开始变小，分母变小(比b/lgn更大)，而始终有n+2^r = O(n)，时间复杂度大于O(bn/lgn)。因此b&gt;lgn时，时间复杂度O(bn/lgn);</p>
+<p>当然，更精确的计算结果可以通过对其求导获得。</p>
+<p>下一篇文章，我将详细介绍桶排序(bucket sort)。</p>
+<ul>
+<li><em>参考书：《算法导论》–机械工业出版社</em></li>
+</ul>
 
                 
             </div>
@@ -581,7 +632,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/09/26/yi-wei-quan-jia-qi-fulladder/">https://sion258.github.io/2023/09/26/yi-wei-quan-jia-qi-fulladder/</a>
+                    <a href="https://sion258.github.io/2023/10/03/xian-xing-shi-jian-de-pai-xu/">https://sion258.github.io/2023/10/03/xian-xing-shi-jian-de-pai-xu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -618,11 +669,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/Computer-science/">
-                                    <span class="chip bg-color">Computer science</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -790,9 +837,48 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/10/03/xian-xing-shi-jian-de-pai-xu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        
+                        <span class="card-title"></span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Sion
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2023/10/02/kuai-su-pai-xu-he-sui-ji-hua-kuai-su-pai-xu/">
                     <div class="card-image">
@@ -810,53 +896,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-02
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Sion
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Computer-science/">
-                        <span class="chip bg-color">Computer science</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/09/19/fu-dian-de-biao-shi-fang-fa/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="浮点数的表示方法">
-                        
-                        <span class="card-title">浮点数的表示方法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-09-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-02
                             </span>
                         <span class="publish-author">
                             
