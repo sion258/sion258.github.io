@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SION&#39;S BLOG">
+    <meta name="keywords" content="阶段复习一, SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SION&#39;S BLOG</title>
+    <title>阶段复习一 | SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">阶段复习一</h1>
                 </div>
             </div>
         </div>
@@ -431,9 +431,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/algorithem/">
+                                <span class="chip bg-color">algorithem</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -445,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-03
+                    2023-10-07
                 </div>
                 
 
@@ -469,85 +473,203 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h2 id="title-liner-time-sortdate-2023-10-04-18-13-49tags-Computer-science"><a href="#title-liner-time-sortdate-2023-10-04-18-13-49tags-Computer-science" class="headerlink" title="title:liner time sortdate:2023-10-04 18:13:49tags:Computer science"></a>title:liner time sort<br>date:2023-10-04 18:13:49<br>tags:Computer science</h2><h1 id="线性时间排序"><a href="#线性时间排序" class="headerlink" title="线性时间排序"></a>线性时间排序</h1><h2 id="一-比较排序算法的下界和决策树模型"><a href="#一-比较排序算法的下界和决策树模型" class="headerlink" title="一. 比较排序算法的下界和决策树模型"></a>一. 比较排序算法的下界和决策树模型</h2><p>在我们之前了解的排序算法中，都<strong>依赖于元素之间的比较</strong>，我们称这些排序方法为<strong>比较排序（comparsion sort）</strong>.</p>
-<p>给你几分钟回忆一下我们学过的排序方法的时间复杂度为多少？</p>
-<p>对于n个元素的输入序列：</p>
-<ul>
-<li>插入排序O(n^2)</li>
-<li>归并排序O(nlgn)</li>
-<li>推排序O(nlgn)</li>
-<li>快速排序O(nlgn)</li>
+                <p>主要是用来应对EXAM1的笔记，也用做博客参考吧。</p>
+<h1 id="复习目录"><a href="#复习目录" class="headerlink" title="复习目录"></a>复习目录</h1><ul>
+<li>算法分析</li>
+<li>分治思想</li>
+<li>比较排序</li>
+<li>二叉树</li>
 </ul>
-<p>其中快速排序在划分为0和n-1时的情况下退化为O(n^2),随机化快速排序为O(nlgn)，其中归并排序和堆排序在最坏的情况下仍要经过下界Omega(nlgn)次比较，因此<strong>归并排序和推排序都是渐进最优的</strong>。</p>
-<p>那么所有的比较排序的比较次数的至少是Omega(nlgn)吗？有没有比O(nlgn)更快的排序算法呢？</p>
-<p>我们借助决策树(Decision Tree)来进行分析。</p>
-<p>例如，对于一个三元素序列，我们可以将其比较排序的方式抽象为：</p>
-<img src="C:\Users\唐浩钏\document\python\决策树分析比较排序.png" alt="决策树分析比较排序" style="zoom:200%;">
+<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><p>我们主要关注运行时间，运行时间中，我们主要关注增长量级。</p>
+<p>在输入规模足够大时，运行时间主要有增长量级决定，这时我们主要研究算法的<strong>渐进效率</strong>。</p>
+<h3 id="渐进记号"><a href="#渐进记号" class="headerlink" title="渐进记号"></a>渐进记号</h3><ul>
+<li><p>$$<br>\Theta<br>$$</p>
+<p>:严格的指出上下确界。用集合来表示就是</p>
+</li>
+</ul>
+<p>$$<br>\Theta(g(n)) = {f(n):存在c_1,c_和n_0,使得对所有的n&gt;=n_0,有0&lt;=c_1g(n)&lt;=f(n)&lt;=c_2g(n)}<br>$$</p>
+<p>可以想成”=”。</p>
+<ul>
+<li>$$<br>O<br>$$</li>
+</ul>
+<p>：指出上确界。用集合表示就是：<br>$$<br>O(g(n))={f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=f(n)&lt;=cg(n)}<br>$$<br>可以想成f(n)&lt;=g(n)的表示。而o符号表示一个不那么紧邻的上确界。</p>
+<ul>
+<li>$$<br>\Omega<br>$$</li>
+</ul>
+<p>:指出下确界。用集合表示就是：<br>$$<br>\Omega(g(n)) = {f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=cg(n)&lt;=f(n)}<br>$$<br>可以想成f(n)&gt;=g(n)的表示。而小写的w表示一个不那么紧邻的下确界，例如是n&lt;n^2的n。 </p>
+<h2 id="分治方法-Divide-and-Conquer"><a href="#分治方法-Divide-and-Conquer" class="headerlink" title="分治方法(Divide and Conquer)"></a>分治方法(Divide and Conquer)</h2><p>分治法(divide and conquer)是将问题分成规模更小的子问题，再分开解决之后合并的方法。因此主要为三步：</p>
+<ul>
+<li><p><strong>分解：将问题分解成规模更小但相同的子问题</strong>；</p>
+</li>
+<li><p><strong>解决：递归地解决子问题，当子问题递归到足够小或者能直接解决，则停止递归；</strong></p>
+</li>
+<li><p><strong>合并：将子问题的解的集合合并成原问题的解</strong>。</p>
+<p>归并排序，快速排序和顺序查找便是用了这一思想，留着后面介绍。</p>
+<p>​</p>
+</li>
+</ul>
+<h3 id="分治方法的分析"><a href="#分治方法的分析" class="headerlink" title="分治方法的分析"></a>分治方法的分析</h3><h3 id="递归式"><a href="#递归式" class="headerlink" title="递归式"></a>递归式</h3><p>递归式可以很贴切的描述分支方法的过程,例如归并排序的运行时间用T(n)表示,那么T(n)可以递归地表示为：<br>$$<br>T(n) = 2{T(n/2)}+\Theta(n)<br>$$<br>求时间复杂度主要有三个方法：</p>
+<ul>
+<li>代入法：猜一个复杂度，然后用数学归纳法证明。</li>
+<li>递归树法：主要就是求树的高度，树的高度对于最大调用次数，主要的运行时间也取决于递归调用次数。</li>
+<li>主方法</li>
+</ul>
+<p>这里主要介绍主方法。</p>
+<h3 id="主方法"><a href="#主方法" class="headerlink" title="主方法"></a>主方法</h3><p>对于形如:<br>$$<br>T(n) = aT(n/b) + \Theta(n^c)<br>$$<br>其中a&gt;=1,b&gt;1</p>
+<p>case1:<br>$$<br>log_b a &lt; c<br>$$<br>时间复杂度O(n^c)</p>
+<p>case2:<br>$$<br>log_b a = c<br>$$<br>时间复杂度O(n^c*lgn)</p>
+<p>case3：<br>$$<br>log_b a &gt; c<br>$$<br>时间复杂度O(n^log_b a)</p>
+<p>简单来说，log_b a和c谁大，就是O(n^{大的那一方})，需要特别记忆的只是相等的情况。</p>
+<h2 id="比较排序-Comparsion-Sort"><a href="#比较排序-Comparsion-Sort" class="headerlink" title="比较排序(Comparsion Sort)"></a>比较排序(Comparsion Sort)</h2><p>主要是以比较为排序依据的算法:</p>
+<ul>
+<li>插入排序</li>
+<li>堆排序</li>
+<li>归并排序</li>
+<li>快速排序(以及随机化)</li>
+</ul>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>插入排序就是遍历所有的输入序列，将当前遍历的元素插入已排序的序列，插入也需要遍历已排序序列。</p>
+<p>伪代码：</p>
+<pre class="line-numbers language-none"><code class="language-none">for j = 2 to A.length:
+	key = A[j]
+	//Insert A[j] to sorted array A[1,...,j-1]
+	for i = j - 1 downto 1:
+		//if the current number &gt;key,then put current number to next position
+		if A[i] &gt; key:
+			A[i+1] = A[i]
+		else:
+			//the psition of current number is A[j]
+			A[i+1] = key
+			break
+	 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>可以观察到这棵树的叶子节点包含了所有的可能的比较情况，对于3个元素的比较，至少包含3！的可能的排序。合理外推，可以得到对于n个元素的比较，包含n！种的可能排序，即n！个叶子节点。</p>
-<p>在树中，最坏的情况对应最多的比较次数，观察决策树，我们可以发现比较次数即到达一个叶子节点的高度，最坏的情况对应最深的叶子节点，即这个决策树的高，记作h。在一个二叉树中，<strong>叶子节点最多</strong>的情况就是这个树是一棵<strong>满二叉树</strong>，当一个棵树是满二叉树时，叶子节点为2^h,因此决策树的叶子节点l至多为2^h。那么决策树的叶子节点l满足：<br>$$<br>n!&lt;=l&lt;=2^h<br>$$<br>则<br>$$<br>h&gt;=lg(n!)<br>$$<br>由<strong>斯特林公式(Stirling’s approximation)</strong><br>$$<br>n!\approx\ \sqrt{2\pi n}(\frac{n}{e})^n<br>$$<br>可以化简得到：<br>$$<br>h = \omega(nlgn)<br>$$<br><strong>我们可以发现比较次数至少为nlgn，所以所有的比较排序的下界Omega(nlgn)。</strong></p>
-<p><strong>由于归并排序和堆排序的运行时间上界为O(nlgn),所以他们是渐进最优的比较排序方法</strong>。</p>
-<hr>
-<p><strong>那么有没有运行时间更小的排序算法呢？</strong></p>
-<h2 id="二-线性时间的排序算法"><a href="#二-线性时间的排序算法" class="headerlink" title="二. 线性时间的排序算法"></a>二. 线性时间的排序算法</h2><h3 id="1-计数排序"><a href="#1-计数排序" class="headerlink" title="1. 计数排序"></a>1. 计数排序</h3><h4 id="1-1-原理"><a href="#1-1-原理" class="headerlink" title="1.1 原理"></a>1.1 原理</h4><p>想象一下，不利用数与数之间的比较，是否能实现一组输入序列的排序？</p>
-<p>比如有一组数&lt;2,3,4,1,5&gt;,有5个元素，范围1~5，比5小的数有4个，那么5应该在第五个元素的位置上，4应该在第四个元素的位置上，…,1应该在第1的位置上。那么对于一个元素x，确定比x小的元素的个数，可以确定x在输出序列的位置。</p>
-<p>所以，已知一个输入序列在0~k的范围内，通过分配k个计数器，统计输入序列中的元素i在第i个计数器上的出现次数，将计数器求前缀和，就有了每一个元素在输出序列的具体位置。</p>
-<h4 id="1-2-代码"><a href="#1-2-代码" class="headerlink" title="1.2 代码"></a>1.2 代码</h4><p>知道了思想，我们可以写出相应的实现过程，这里我将写出计数排序的java实现：</p>
-<pre class="line-numbers language-none"><code class="language-none">public static  CountingSort(int[] a){
-	int[] c = new int[max(a)];
-	int[] b = new int[a.length];
+<p>时间复杂度:O(n^2)</p>
+<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>  堆排序建立了一个二叉堆，利用小根堆或者大根来维护二叉堆，将根节点和最后一个节点交换，递归地用小根堆或者大根堆来更新二叉堆的算法。</p>
+<pre class="line-numbers language-none"><code class="language-none">//维护小根堆
+public static void heapify(double[] a,int i,int n){
+	int largest = i;//初始化最大值的下标为i
+	int left = 2*i+1;
+	int right = 2*i+2;
 	
-	for(int i = 1;i &lt;= a.length;i++){
-		int j = a[i];
-		c[j]++;
+	if(left &lt; n&amp;&amp;a[left]&lt;=a[largest]) largest = left;//更新最大值下标
+	if(right &lt; n&amp;&amp;a[right]&lt;=a[largest]) largest = right;
+	if(largest != i){
+		swap(a[largest],a[i]);
+		heapify(a,largest,n);
+	}
+}
+public static void HeapSort(double[] a){
+		n = a.length;
+		for(int i = n/2-1;i&gt;=0;i--)
+			heapify(a,i,n);//建立大根堆
+		
+		for(int i = n-1;i&gt;=0;i--){
+			swap(a[0],a[i]);
+			heapify(a,0,i);//更新交换根节点和最后的节点的堆，并且交换后的最后的节点不参与更新，因此i——
+		}
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>建立大（小）根堆；（从底部向顶部维护，因此是从n/2-1开始）</li>
+<li>交换保存着最大值最小的根节点；</li>
+<li>每交换一次，更新大（小）堆；</li>
+<li>大根堆输出从小到大，小根堆输出从大到小。</li>
+</ul>
+<p>时间复杂度:O(nlgn)。</p>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序的思想基于分治方法，分解，解决，合并。</p>
+<ul>
+<li><p>分解：找到每段序列的中点</p>
+</li>
+<li><p>解决：对足够小的序列进行排序，递归地调用</p>
+</li>
+<li><p>合并：将排序好的子序列进行合并</p>
+<p>循环不变式为：-  利用端点求中点-更新端点-处理左边</p>
+<p>，递归处理右边-利用当前端点归并排序</p>
+<pre class="line-numbers language-none"><code class="language-none">public static void progress(double[] a,int l,int r){
+	if(l == r) return;
+	int mid = l + (r-l)/2;//防止溢出
+	progress(a,l,mid);
+	progress(a,mid+1,r);
+	MergeSort(a,l,mid,r);
+}
+public static void MergreSort(double[] a,int l,int r){
+	int[] arr = new int[r-l+1];
+	int p = mid + 1//右半的指针
+	int k = 0;//新数组的计数器
+	while(l&lt;=mid&amp;&amp;p&lt;=r){
+		if(a[l] &lt; a[p]){
+			arr[k++] = a[l++];
+		}elif(a[l] &gt; a[p]){
+			arr[k++] = a[p++];	
+		}
+	}//较小的存入新数组
+	while(l&lt;=mid)a[l++]//如果无操作(包括元素之间相等和某一方遍历完成)arr[k++] = a[l++];
+	while(p&lt;r)a[p++]arr[k++] = a[p++];
+	for(int i=l;i &lt;= r;i++) a[i] = arr[k-l];//转存回去
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
+</ul>
+<p>时间复杂度O(nlgn)。</p>
+<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序和归并类似，不过快速排序不需要转存，是在原本数组上进行的“原址排序”。</p>
+<p>循环不变式为：- 更新划分-快速排序当前划分下的左半-快速排序当前划分下的右半。</p>
+<pre class="line-numbers language-none"><code class="language-none">public static void QuickSort(double[] a,int l,int r){
+	int p = Parrtition(a,l,r);
+	QuickSort(a,l,p);
+	QuickSort(a,p+1,r);
+}
+public static void Parrtition(double[] a,int l,int r){
+	x = a[r];
+	p = l - 1;
+	for(int i = 1;i&lt;r;i++){
+		p++;
+		if(a[i] &lt; x){
+			swap(a[p],a[i]);
+		}
+	}
+	swap(a[p+1],a[r]);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>时间复杂度为O(nlgn)，在划分为0和n-1的情况下退化为O(n^2)(T(n)=T(n-1)+O(n))。</p>
+<p>快速排序的随机化版本主要在选取主元时采用了随机化：</p>
+<pre class="line-numbers language-none"><code class="language-none">public static void RandomParrtition(double[] a,int l,int r){
+	tmp = random.nextint(r-1)+l;
+	swap(a[tmp],a[r]);
+	return Parrtition(a,l,r);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>随便找一个下标和最右边的交换即可.</p>
+<p>时间复杂度为O(nlgn)。</p>
+<h3 id="比较排序的时间下界"><a href="#比较排序的时间下界" class="headerlink" title="比较排序的时间下界"></a>比较排序的时间下界</h3><p>根据决策树模型，对于n个元素排序，树的高度h对应调用次数，所有比较情况最多是一棵满二叉树的叶子节点的数量:2^h;所有比较情况至少是一颗完全二叉树的叶子节点的数量:n!，那么有了调用次数和n的关系：<br>$$<br>2^h &gt; n!<br>$$<br>通过斯特林公式可以大致得到时间复杂度为：<br>$$<br>\Omega(nlgn)<br>$$<br>所有的比较排序的时间下界就是这个。</p>
+<p>归并和堆排序是渐进最优的比较排序，是稳定的。</p>
+<h2 id="线性时间的排序-Linear-time-Sort"><a href="#线性时间的排序-Linear-time-Sort" class="headerlink" title="线性时间的排序(Linear time Sort)"></a>线性时间的排序(Linear time Sort)</h2><p>主要   是在线性时间O(n)完成的排序算法:</p>
+<ul>
+<li>计数排序</li>
+<li>基数排序</li>
+<li>桶排序</li>
+</ul>
+<h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>计数排序主要是对范围0<del>k的数组排序，为0</del>k的每个数字找到一个计数器，遍历一遍，出现一次这个数字变计数一次，最后将计数器求前缀和，找到每一个数的位置。</p>
+<pre class="line-numbers language-none"><code class="language-none">public static double[] CountingSort(double[] a){
+	double[] c = new double[max(a)];
+	double[] b = new double[a.length];
+	
+	for(int i = 0;i &lt; a.length;i++){
+		x = a[i];
+		c[x]++;
 	}
 	for(int i = 1;i &lt;= max(a);i++){
-		c[i] = c[i-1]+c[i]l;
+		c[i] = c[i-1]+c[i];
 	}
-	for(int i = a.length;i&gt;=1;i++){
-		int j = a[i];
-		b[c[j]]= a[i];
-		c[j]——；
+	for(int i = 0;i &lt; a.length;i++){
+		x = a[i];;
+		b[c[x]] = a[i];
+		c[x]--;
 	}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+	return b;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>下面是分步图解：</p>
-<p><img src="C:\Users\唐浩钏\document\python\计数排序图解.png" alt="计数排序图解"></p>
-<p>我们新立数组c来作为计数器，<strong>长度为a的最大值</strong>，因为我们要对0~k的每一个数都设立计数器<strong>统计每个数出现的次数</strong>，随后<strong>求前缀和为更新的c数组</strong>，以确定各个数在输出数组b出现的位置，之后从a.length开始遍历，每遍历一个a[i],找到统计该a[i]的计数器c[a[i]]，此时更新为前缀和的数组c代表的是其下标，也就是a[i]，在输出序列的位置，所以我们将<strong>a[i]的值赋给b[c[a[i]]]<strong>，c[a[i]]代表的</strong>a[i]的计数器减一</strong>，表示已经等于a[i]的值输出过一次，下一次遍历到与a[i]相同的值的时候会把这个值放在a[i]的前一位。</p>
-<h4 id="1-3-性能分析"><a href="#1-3-性能分析" class="headerlink" title="1.3 性能分析"></a>1.3 性能分析</h4><p>计数排序的时间复杂度是多少呢？</p>
-<p>第一个for循环的时间复杂度是O(n)，第二个for循环的时间复杂度为O(k)，第三个循环的时间复杂度为O(n)。因此，计数排序的时间复杂度可以用<strong>O(n+k)来表示</strong>。</p>
-<p><strong>它是稳定的。这是因为相同序列的值在输出序列中的相对位置和在输出序列中相同</strong>。换言之，对于两个相同的数，先出现在输入序列中的数在输出序列中也先出现。</p>
-<p>我们看到，计数排序的时间复杂度已经低于了比较排序的时间复杂度下界Omega(nlgn),但是开辟了一个k大小的数组c，因此**空间复杂度为O(k)**。</p>
-<p>但是，当k较小时，此算法的性能不错，但是当k，譬如k=n^2之类，此算法的性能大大下降，因此对于大数之间的比较，计数算法不合适。</p>
-<p>因此计数排序算法常常作为一个子过程在基数排序(radix sort)中.</p>
-<h3 id="2-基数排序"><a href="#2-基数排序" class="headerlink" title="2. 基数排序"></a>2. 基数排序</h3><h4 id="2-1-原理"><a href="#2-1-原理" class="headerlink" title="2.1 原理"></a>2.1 原理</h4><p>想想如何对几个已知年月日的日期排序？</p>
-<p>2023.9.27</p>
-<p>2023.8.21</p>
-<p>2010.8.23</p>
-<p>2077.8.31</p>
-<p>我们可以从日期开始进行排序，比如我们在这里从小到大排序：</p>
-<p>2023.8.21</p>
-<p>2010.8.23</p>
-<p>2023.9.27</p>
-<p>2077.8.31</p>
-<p>接着对月份排序：</p>
-<p>2023.8.21</p>
-<p>2010.8.23</p>
-<p>2077.8.31</p>
-<p>2023.9.27</p>
-<p>接着对年份排序</p>
-<p>2010.8.23</p>
-<p>2023.8.21</p>
-<p>2023.9.27</p>
-<p>2077.8.31</p>
-<p>我们可以发现从最小位对其所有“位”排序之后，我们得到了正确的顺序1，这就是基数排序的基本思想。</p>
-<p>从最低有效位排序，接着向高位排序，结果即是排序好的结果。</p>
-<p>根据原理而言，我们需要选择一个稳定的排序方法作为每一位的排序方法，比如上面的排序过程，<strong>有两个为2023的年份，排序结果必须与上一位排序的相对位置相同</strong>，即2023.8在2023.9之前。</p>
-<p>所以<strong>我们需要一个稳定的排序方法</strong>，比如对十进制数的排序，每一位数在0~9之间，范围不大，所以我们可以<strong>选择计数排序作为每一位的排序方法</strong>。</p>
-<h4 id="2-2-代码"><a href="#2-2-代码" class="headerlink" title="2.2 代码"></a>2.2 代码</h4><pre class="line-numbers language-none"><code class="language-none">public class RadixSort {
-
-    // 获取数组中最大的数
+<p>时间复杂度:O(n)。</p>
+<p>空间复杂度:O(n)。</p>
+<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>基数排序就是从最低有效位开始排序，到最高有效位，一共进行d轮排序，d是该数的位数，每一次排序应该是稳定排序，因为要保证下一次排序时，这一位相同的数字的相对位置不变。</p>
+<pre><code>public class RadixSort {
+// 获取数组中最大的数
     public static int getMax(int[] arr) {
         int max = arr[0];
         for (int i = 1; i &lt; arr.length; i++) {
@@ -595,18 +717,28 @@
         for (int exp = 1; max / exp &gt; 0; exp *= 10) {
             countingSort(arr, exp);
         }
-    }<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+}**
+</code></pre>
+<p>时间复杂度位O(n);</p>
+<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>桶排序是将元素放入不同桶中，再对桶内元素进行排序。跟散列表（hash table）有类似之处。</p>
+<pre class="line-numbers language-none"><code class="language-none">public static List&lt;integer&gt;[] BucketSort(double[] a){
+	int n = a.length;
+	List&lt;integer&gt;[] b = new List[n];//表示一个泛型数组，其中每个元素都是一个 List 对象，该 List 对象中存储的元素类型为 Integer
+	for(int i = 0;i &lt; n;i++){
+		b[i] = new ArrayList&lt;&gt;;
+	}
+    for(i = 0;i &lt; n;i++){
+    	b[(int)n*a[i]].add(a[i]); 
+    }
+    for(int i = 0; i &lt; n;i++){
+    	b[i].sort();
+    }
+    return b;
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<h4 id="2-3-性能分析"><a href="#2-3-性能分析" class="headerlink" title="2.3 性能分析"></a>2.3 性能分析</h4><p>​    如果基数排序使用的稳定的排序方式(以计数排序为例)的时间复杂度为O(n+k)，最大位数为d，那么基数排序的时间复杂度为**O(d(n+k))**。因为每一轮消耗的时间为O(n+k),有d位数，那么就进行d轮。</p>
-<h4 id="2-4-拓展"><a href="#2-4-拓展" class="headerlink" title="2.4 拓展"></a>2.4 拓展</h4><p>为了减少k的大小，我们可以将要比较的数转换为二进制，这样k的大小为1，大大减小了k的的大小和计数排序的时间复杂度，但是位数将展开得非常大，如何在二者之间取平衡呢？</p>
-<p>假设被排序的数换算成b个bit(b位数)，我们可以将多位合成一组，假如r个bit一组，那么可以看作b/r个r位数，那么计数排序的轮数就是b/r轮，每一位数在范围0~2^r-1内，那么时间复杂度可以表示为：<br>$$<br>O((b/r)(n+2^r))<br>$$<br>由于位数b和元素个数n给定，我们是否能找到一个r使得时间复杂度最低？</p>
-<p>如果b&lt;=lgn,对于任何满足r&lt;=b的r，都有n+2^r=O(n),因此当b=r时，有渐进意义最优的O((b/r)(n+2^r)) = O(n)；</p>
-<p>如果b&gt;lgn,r&lt;=lgn,都有n+2^r = O(n)，当r = lgn，时间复杂度为O(bn/lgn)，接下来如果r变大，分子2^r增大的速度大于分母r增大的速度，所以这时候的时间复杂度大于O(bn/lgn)；相反r开始变小，分母变小(比b/lgn更大)，而始终有n+2^r = O(n)，时间复杂度大于O(bn/lgn)。因此b&gt;lgn时，时间复杂度O(bn/lgn);</p>
-<p>当然，更精确的计算结果可以通过对其求导获得。</p>
-<p>下一篇文章，我将详细介绍桶排序(bucket sort)。</p>
-<ul>
-<li><em>参考书：《算法导论》–机械工业出版社</em></li>
-</ul>
+
+
+<h2 id="二叉树-Binary-Search-Tree"><a href="#二叉树-Binary-Search-Tree" class="headerlink" title="二叉树(Binary Search Tree)"></a>二叉树(Binary Search Tree)</h2><p>单独讲</p>
 
                 
             </div>
@@ -633,7 +765,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/10/03/xian-xing-shi-jian-de-pai-xu/">https://sion258.github.io/2023/10/03/xian-xing-shi-jian-de-pai-xu/</a>
+                    <a href="https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/">https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -670,7 +802,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/algorithem/">
+                                    <span class="chip bg-color">algorithem</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -838,17 +974,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/10/05/tong-pai-xu/">
+                <a href="/2023/10/07/jie-duan-fu-xi-yi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="阶段复习一">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">阶段复习一</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -858,9 +995,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-05
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-07
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -868,6 +1005,15 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/algorithem/">
+                        <span class="chip bg-color">algorithem</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -879,13 +1025,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/02/kuai-su-pai-xu-he-sui-ji-hua-kuai-su-pai-xu/">
+                <a href="/2023/10/07/hong-hei-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Quicksort">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="基础数据结构">
                         
-                        <span class="card-title">Quicksort</span>
+                        <span class="card-title">基础数据结构</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -896,7 +1042,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-07
                             </span>
                         <span class="publish-author">
                             
@@ -909,8 +1055,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Computer-science/">
-                        <span class="chip bg-color">Computer science</span>
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
                     </a>
                     
                 </div>
