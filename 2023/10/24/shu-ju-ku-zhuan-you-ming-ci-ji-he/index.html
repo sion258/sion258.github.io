@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="阶段复习一, SION&#39;S BLOG">
+    <meta name="keywords" content="SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>阶段复习一 | SION&#39;S BLOG</title>
+    <title>SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">阶段复习一</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -431,13 +431,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/algorithem/">
-                                <span class="chip bg-color">algorithem</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -449,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-07
+                    2023-10-24
                 </div>
                 
 
@@ -473,272 +469,264 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>主要是用来应对EXAM1的笔记，也用做博客参考吧。</p>
-<h1 id="复习目录"><a href="#复习目录" class="headerlink" title="复习目录"></a>复习目录</h1><ul>
-<li>算法分析</li>
-<li>分治思想</li>
-<li>比较排序</li>
-<li>二叉树</li>
-</ul>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><p>我们主要关注运行时间，运行时间中，我们主要关注增长量级。</p>
-<p>在输入规模足够大时，运行时间主要有增长量级决定，这时我们主要研究算法的<strong>渐进效率</strong>。</p>
-<h3 id="渐进记号"><a href="#渐进记号" class="headerlink" title="渐进记号"></a>渐进记号</h3><ul>
-<li><p>$$<br>\Theta<br>$$</p>
-<p>:严格的指出上下确界。用集合来表示就是</p>
-</li>
-</ul>
-<p>$$<br>\Theta(g(n)) = {f(n):存在c_1,c_和n_0,使得对所有的n&gt;=n_0,有0&lt;=c_1g(n)&lt;=f(n)&lt;=c_2g(n)}<br>$$</p>
-<p>可以想成”=”。</p>
-<ul>
-<li>$$<br>O<br>$$</li>
-</ul>
-<p>：指出上确界。用集合表示就是：<br>$$<br>O(g(n))={f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=f(n)&lt;=cg(n)}<br>$$<br>可以想成f(n)&lt;=g(n)的表示。而o符号表示一个不那么紧邻的上确界。</p>
-<ul>
-<li>$$<br>\Omega<br>$$</li>
-</ul>
-<p>:指出下确界。用集合表示就是：<br>$$<br>\Omega(g(n)) = {f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=cg(n)&lt;=f(n)}<br>$$<br>可以想成f(n)&gt;=g(n)的表示。而小写的w表示一个不那么紧邻的下确界，例如是n&lt;n^2的n。 </p>
-<h2 id="分治方法-Divide-and-Conquer"><a href="#分治方法-Divide-and-Conquer" class="headerlink" title="分治方法(Divide and Conquer)"></a>分治方法(Divide and Conquer)</h2><p>分治法(divide and conquer)是将问题分成规模更小的子问题，再分开解决之后合并的方法。因此主要为三步：</p>
-<ul>
-<li><p><strong>分解：将问题分解成规模更小但相同的子问题</strong>；</p>
-</li>
-<li><p><strong>解决：递归地解决子问题，当子问题递归到足够小或者能直接解决，则停止递归；</strong></p>
-</li>
-<li><p><strong>合并：将子问题的解的集合合并成原问题的解</strong>。</p>
-<p>归并排序，快速排序和顺序查找便是用了这一思想，留着后面介绍。</p>
-<p>​</p>
-</li>
-</ul>
-<h3 id="分治方法的分析"><a href="#分治方法的分析" class="headerlink" title="分治方法的分析"></a>分治方法的分析</h3><h3 id="递归式"><a href="#递归式" class="headerlink" title="递归式"></a>递归式</h3><p>递归式可以很贴切的描述分支方法的过程,例如归并排序的运行时间用T(n)表示,那么T(n)可以递归地表示为：<br>$$<br>T(n) = 2{T(n/2)}+\Theta(n)<br>$$<br>求时间复杂度主要有三个方法：</p>
-<ul>
-<li>代入法：猜一个复杂度，然后用数学归纳法证明。</li>
-<li>递归树法：主要就是求树的高度，树的高度对于最大调用次数，主要的运行时间也取决于递归调用次数。</li>
-<li>主方法</li>
-</ul>
-<p>这里主要介绍主方法。</p>
-<h3 id="主方法"><a href="#主方法" class="headerlink" title="主方法"></a>主方法</h3><p>对于形如:<br>$$<br>T(n) = aT(n/b) + \Theta(n^c)<br>$$<br>其中a&gt;=1,b&gt;1</p>
-<p>case1:<br>$$<br>log_b a &lt; c<br>$$<br>时间复杂度O(n^c)</p>
-<p>case2:<br>$$<br>log_b a = c<br>$$<br>时间复杂度O(n^c*lgn)</p>
-<p>case3：<br>$$<br>log_b a &gt; c<br>$$<br>时间复杂度O(n^log_b a)</p>
-<p>简单来说，log_b a和c谁大，就是O(n^{大的那一方})，需要特别记忆的只是相等的情况。</p>
-<h2 id="比较排序-Comparsion-Sort"><a href="#比较排序-Comparsion-Sort" class="headerlink" title="比较排序(Comparsion Sort)"></a>比较排序(Comparsion Sort)</h2><p>主要是以比较为排序依据的算法:</p>
-<ul>
-<li>插入排序</li>
-<li>堆排序</li>
-<li>归并排序</li>
-<li>快速排序(以及随机化)</li>
-</ul>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>插入排序就是遍历所有的输入序列，将当前遍历的元素插入已排序的序列，插入也需要遍历已排序序列。</p>
-<p>伪代码：</p>
-<pre class="line-numbers language-none"><code class="language-none">for j = 2 to A.length:
-	key = A[j]
-	//Insert A[j] to sorted array A[1,...,j-1]
-	for i = j - 1 downto 1:
-		//if the current number &gt;key,then put current number to next position
-		if A[i] &gt; key:
-			A[i+1] = A[i]
-		else:
-			//the psition of current number is A[j]
-			A[i+1] = key
-			break
-	 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度:O(n^2)</p>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>  堆排序建立了一个二叉堆，利用小根堆或者大根来维护二叉堆，将根节点和最后一个节点交换，递归地用小根堆或者大根堆来更新二叉堆的算法。</p>
-<pre class="line-numbers language-none"><code class="language-none">//维护小根堆
-public static void heapify(double[] a,int i,int n){
-	int largest = i;//初始化最大值的下标为i
-	int left = 2*i+1;
-	int right = 2*i+2;
-	
-	if(left &lt; n&amp;&amp;a[left]&lt;=a[largest]) largest = left;//更新最大值下标
-	if(right &lt; n&amp;&amp;a[right]&lt;=a[largest]) largest = right;
-	if(largest != i){
-		swap(a[largest],a[i]);
-		heapify(a,largest,n);
-	}
-}
-public static void HeapSort(double[] a){
-		n = a.length;
-		for(int i = n/2-1;i&gt;=0;i--)
-			heapify(a,i,n);//建立大根堆
-		
-		for(int i = n-1;i&gt;=0;i--){
-			swap(a[0],a[i]);
-			heapify(a,0,i);//更新交换根节点和最后的节点的堆，并且交换后的最后的节点不参与更新，因此i——
-		}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>建立大（小）根堆；（从底部向顶部维护，因此是从n/2-1开始）</li>
-<li>交换保存着最大值最小的根节点；</li>
-<li>每交换一次，更新大（小）堆；</li>
-<li>大根堆输出从小到大，小根堆输出从大到小。</li>
-</ul>
-<p>时间复杂度:O(nlgn)。</p>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序的思想基于分治方法，分解，解决，合并。</p>
-<ul>
-<li><p>分解：找到每段序列的中点</p>
-</li>
-<li><p>解决：对足够小的序列进行排序，递归地调用</p>
-</li>
-<li><p>合并：将排序好的子序列进行合并</p>
-<p>循环不变式为：-  利用端点求中点-更新端点-处理左边</p>
-<p>，递归处理右边-利用当前端点归并排序</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void progress(double[] a,int l,int r){
-	if(l == r) return;
-	int mid = l + (r-l)/2;//防止溢出
-	progress(a,l,mid);
-	progress(a,mid+1,r);
-	MergeSort(a,l,mid,r);
-}
-public static void MergreSort(double[] a,int l,int r){
-	int[] arr = new int[r-l+1];
-	int p = mid + 1//右半的指针
-	int k = 0;//新数组的计数器
-	while(l&lt;=mid&amp;&amp;p&lt;=r){
-		if(a[l] &lt; a[p]){
-			arr[k++] = a[l++];
-		}elif(a[l] &gt; a[p]){
-			arr[k++] = a[p++];	
-		}
-	}//较小的存入新数组
-	while(l&lt;=mid)a[l++]//如果无操作(包括元素之间相等和某一方遍历完成)arr[k++] = a[l++];
-	while(p&lt;r)a[p++]arr[k++] = a[p++];
-	for(int i=l;i &lt;= r;i++) a[i] = arr[k-l];//转存回去
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<p>时间复杂度O(nlgn)。</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序和归并类似，不过快速排序不需要转存，是在原本数组上进行的“原址排序”。</p>
-<p>循环不变式为：- 更新划分-快速排序当前划分下的左半-快速排序当前划分下的右半。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void QuickSort(double[] a,int l,int r){
-	int p = Parrtition(a,l,r);
-	QuickSort(a,l,p);
-	QuickSort(a,p+1,r);
-}
-public static void Parrtition(double[] a,int l,int r){
-	x = a[r];
-	p = l - 1;
-	for(int i = 1;i&lt;r;i++){
-		p++;
-		if(a[i] &lt; x){
-			swap(a[p],a[i]);
-		}
-	}
-	swap(a[p+1],a[r]);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度为O(nlgn)，在划分为0和n-1的情况下退化为O(n^2)(T(n)=T(n-1)+O(n))。</p>
-<p>快速排序的随机化版本主要在选取主元时采用了随机化：</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void RandomParrtition(double[] a,int l,int r){
-	tmp = random.nextint(r-1)+l;
-	swap(a[tmp],a[r]);
-	return Parrtition(a,l,r);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>随便找一个下标和最右边的交换即可.</p>
-<p>时间复杂度为O(nlgn)。</p>
-<h3 id="比较排序的时间下界"><a href="#比较排序的时间下界" class="headerlink" title="比较排序的时间下界"></a>比较排序的时间下界</h3><p>根据决策树模型，对于n个元素排序，树的高度h对应调用次数，所有比较情况最多是一棵满二叉树的叶子节点的数量:2^h;所有比较情况至少是一颗完全二叉树的叶子节点的数量:n!，那么有了调用次数和n的关系：<br>$$<br>2^h &gt; n!<br>$$<br>通过斯特林公式可以大致得到时间复杂度为：<br>$$<br>\Omega(nlgn)<br>$$<br>所有的比较排序的时间下界就是这个。</p>
-<p>归并和堆排序是渐进最优的比较排序，是稳定的。</p>
-<h2 id="线性时间的排序-Linear-time-Sort"><a href="#线性时间的排序-Linear-time-Sort" class="headerlink" title="线性时间的排序(Linear time Sort)"></a>线性时间的排序(Linear time Sort)</h2><p>主要   是在线性时间O(n)完成的排序算法:</p>
-<ul>
-<li>计数排序</li>
-<li>基数排序</li>
-<li>桶排序</li>
-</ul>
-<h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>计数排序主要是对范围0<del>k的数组排序，为0</del>k的每个数字找到一个计数器，遍历一遍，出现一次这个数字变计数一次，最后将计数器求前缀和，找到每一个数的位置。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static double[] CountingSort(double[] a){
-	double[] c = new double[max(a)];
-	double[] b = new double[a.length];
-	
-	for(int i = 0;i &lt; a.length;i++){
-		x = a[i];
-		c[x]++;
-	}
-	for(int i = 1;i &lt;= max(a);i++){
-		c[i] = c[i-1]+c[i];
-	}
-	for(int i = 0;i &lt; a.length;i++){
-		x = a[i];;
-		b[c[x]] = a[i];
-		c[x]--;
-	}
-	return b;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度:O(n)。</p>
-<p>空间复杂度:O(n)。</p>
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>基数排序就是从最低有效位开始排序，到最高有效位，一共进行d轮排序，d是该数的位数，每一次排序应该是稳定排序，因为要保证下一次排序时，这一位相同的数字的相对位置不变。</p>
-<pre><code>public class RadixSort {
-// 获取数组中最大的数
-    public static int getMax(int[] arr) {
-        int max = arr[0];
-        for (int i = 1; i &lt; arr.length; i++) {
-            if (arr[i] &gt; max) {
-                max = arr[i];
-            }
-        }
-        return max;
-    }
-
-    // 使用计数排序对数组按照指定的位数进行排序
-    public static void countingSort(int[] arr, int exp) {
-        int n = arr.length;
-        int[] output = new int[n];
-        int[] count = new int[10];
-        Arrays.fill(count, 0);
-
-        // 统计每个数字的出现次数
-        for (int i = 0; i &lt; n; i++) {
-            count[(arr[i] / exp) % 10]++;
-        }
-
-        // 计算每个数字应该在输出数组中的位置
-        for (int i = 1; i &lt; 10; i++) {
-            count[i] += count[i - 1];
-        }
-
-        // 构建输出数组
-        for (int i = n - 1; i &gt;= 0; i--) {
-            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-            count[(arr[i] / exp) % 10]--;
-        }
-
-        // 将输出数组复制到原始数组中
-        for (int i = 0; i &lt; n; i++) {
-            arr[i] = output[i];
-        }
-    }
-
-    // 使用基数排序对数组进行排序
-    public static void radixSort(int[] arr) {
-        int max = getMax(arr);
-
-        // 从最低位到最高位依次进行排序
-        for (int exp = 1; max / exp &gt; 0; exp *= 10) {
-            countingSort(arr, exp);
-        }
-}**
+                <h1 id="数据库专有名词对照表（复习用）"><a href="#数据库专有名词对照表（复习用）" class="headerlink" title="数据库专有名词对照表（复习用）"></a>数据库专有名词对照表（复习用）</h1><p>DDL(Data Definition Language) 数据定义语言</p>
+<p>DML(Data Manipulation Language) 数据操纵语言</p>
+<p>SQL(Structured Query Language) 结构化查询语言</p>
+<pre><code>- A query bring inputed several tables （or one） into one table as output.
+- not - Turing machine equivalent
+- nonprocedural 
+- No action as input and output  to dispkay and communication over network.
 </code></pre>
-<p>时间复杂度位O(n);</p>
-<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>桶排序是将元素放入不同桶中，再对桶内元素进行排序。跟散列表（hash table）有类似之处。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static List&lt;integer&gt;[] BucketSort(double[] a){
-	int n = a.length;
-	List&lt;integer&gt;[] b = new List[n];//表示一个泛型数组，其中每个元素都是一个 List 对象，该 List 对象中存储的元素类型为 Integer
-	for(int i = 0;i &lt; n;i++){
-		b[i] = new ArrayList&lt;&gt;;
-	}
-    for(i = 0;i &lt; n;i++){
-    	b[(int)n*a[i]].add(a[i]); 
-    }
-    for(int i = 0; i &lt; n;i++){
-    	b[i].sort();
-    }
-    return b;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="二叉树-Binary-Search-Tree"><a href="#二叉树-Binary-Search-Tree" class="headerlink" title="二叉树(Binary Search Tree)"></a>二叉树(Binary Search Tree)</h2><p>单独讲</p>
+<p>ODBC(Open Database Connectitiy )开放式数据库连接</p>
+<p>JDBC(Java Database Connectity)JAVA数据库连接</p>
+<p>architecture of database system : </p>
+<ul>
+<li>physical level</li>
+<li>logical level </li>
+<li>view level</li>
+</ul>
+<p>Data Model：</p>
+<ul>
+<li>ER model（entity-relation model）</li>
+<li>Relational model</li>
+<li>Object - based data models（Object - oriented database or object - relational database）</li>
+<li>Semi-structured data model半结构化数据模型（XML（Extended marked language可扩展标记性语言），JSON（javascript object notation基于JavaScript的轻量级数据交换格式））</li>
+<li>the old：</li>
+<li><ul>
+<li>network model</li>
+<li>hierarchical model分级模型</li>
+</ul>
+</li>
+<li>the new：</li>
+<li><ul>
+<li>key - value model</li>
+</ul>
+</li>
+</ul>
+<p>Relational Model 关系数据库</p>
+<h2 id="CH-1"><a href="#CH-1" class="headerlink" title="CH.1"></a>CH.1</h2><ul>
+<li><p>Database-management system(DBMS) : a collection of interrelated data and a set</p>
+<p>of programs to access those data</p>
+</li>
+<li><p>Database-system application</p>
+</li>
+<li><p>online transaction processing</p>
+</li>
+<li><p>data analytics</p>
+</li>
+<li><p>File-processing systems</p>
+</li>
+<li><p>data inconsistency</p>
+</li>
+<li><p>consistency constraints</p>
+</li>
+<li><p>data abstraction</p>
+</li>
+<li><ul>
+<li>Physical level</li>
+<li>logical level</li>
+<li>view level</li>
+</ul>
+</li>
+<li><p>instance</p>
+</li>
+<li><p>schema: The overall design of the database is called the database <strong>schema</strong></p>
+</li>
+<li><ul>
+<li>physical shcema</li>
+<li>logical shcema</li>
+<li>subschema</li>
+</ul>
+</li>
+<li><p>physical data indenpendence: do not depend on the physical schema</p>
+<p>and thus need not be rewritten if the physical schema changes</p>
+</li>
+<li><p>data models </p>
+</li>
+<li><ul>
+<li>entity relationship model</li>
+<li>relational data model</li>
+<li>semi -structured data model</li>
+<li>object based data model</li>
+</ul>
+</li>
+<li><p>database language：</p>
+</li>
+<li><ul>
+<li>data definition language</li>
+<li>data manipulation language</li>
+<li><ul>
+<li>procedural DML</li>
+<li>declarative DML</li>
+<li>nonprocedural DML</li>
+</ul>
+</li>
+<li>query language</li>
+</ul>
+</li>
+<li><p>data definition language</p>
+</li>
+<li><ul>
+<li><p>domain constraints</p>
+</li>
+<li><p>referential integrity: a value that</p>
+<p>appears in one relation for a given set of attributes also appears in a certain set</p>
+<p>of attributes in another relation </p>
+</li>
+<li><p>authorization</p>
+</li>
+<li><ul>
+<li>read </li>
+<li>insert</li>
+<li>update</li>
+<li>delete</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>metadata</p>
+</li>
+<li><p>application program</p>
+</li>
+<li><p>database design</p>
+</li>
+<li><ul>
+<li>conceptual design</li>
+<li>normalization</li>
+<li>specification of functional requiremants </li>
+<li>phsical design phase</li>
+</ul>
+</li>
+<li><p>database engine</p>
+</li>
+<li><ul>
+<li>storge manager</li>
+<li><ul>
+<li>authorization and integrity manager</li>
+<li>transaction manager</li>
+<li>file manager</li>
+<li>buffer manager</li>
+<li>data files</li>
+<li>data dictionary</li>
+<li>indices</li>
+</ul>
+</li>
+<li>query processor</li>
+<li><ul>
+<li>DDL interpreter</li>
+<li>DML compiler</li>
+<li>Query optimization</li>
+<li>Query evaluation engine</li>
+</ul>
+</li>
+<li>transactions</li>
+<li><ul>
+<li>atomicity</li>
+<li>consistency</li>
+<li>durability</li>
+<li>recovery manager</li>
+<li>failure recovery</li>
+<li>concurrency control manger</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>database architecture</p>
+</li>
+<li><ul>
+<li>centralized</li>
+<li>parallel</li>
+<li>distributed</li>
+</ul>
+</li>
+<li><p>database application architecture</p>
+</li>
+<li><ul>
+<li>two -wier</li>
+<li>three -tier</li>
+<li>application -server</li>
+</ul>
+</li>
+<li><p>database administrator(DBA)</p>
+</li>
+</ul>
+<h2 id="CH-2"><a href="#CH-2" class="headerlink" title="CH.2"></a>CH.2</h2><p>• Table</p>
+<p>• Relation</p>
+<p>• Tuple</p>
+<p>• Attribute</p>
+<p>• Relation instance</p>
+<p>• <strong>Domain</strong>:<strong>Domain Constraints</strong>. A domain of possible values must be associated with every</p>
+<p>attribute </p>
+<p>• Atomic domain</p>
+<p>• Null value</p>
+<p>• <strong>Database schema</strong></p>
+<p>• <strong>Database instance</strong></p>
+<p>• <strong>Relation schema</strong></p>
+<p>• Keys</p>
+<p>​	° <strong>Superkey</strong>: <strong>superkey</strong> is a set of one or more attributes that, taken collectively, allow us to identify uniquely a tuple in the relation. </p>
+<p>​	° <strong>Candidate key</strong>:n superkeys for which no proper subset is a</p>
+<p>superkey</p>
+<p>​	° <strong>Primary key</strong>:denote a candidate key that is chosen by the</p>
+<p>database designer as the principal means of identifying tuples within a relation</p>
+<p>​	° <strong>Primary key constraints</strong>:Any two individual tuples in the relation are prohibited from having the same value on the key attributes at the same time</p>
+<p>• <strong>Foreign-key constraint</strong></p>
+<p>​	° <strong>Referencing relation</strong>引用关系</p>
+<p>​	° Referenced relation被引用关系</p>
+<p>• <strong>Referential integrity constraint</strong>：requires that the values appearing in specified</p>
+<p>attributes of any tuple in the referencing relation also appear in specified attributes of at least one tuple in the referenced relation.</p>
+<p>• Schema diagram</p>
+<p>• <strong>Query language types</strong></p>
+<p>​	° Imperative</p>
+<p>​	° Functional</p>
+<p>​	° Declarative</p>
+<p>• <strong>Relational algebra</strong>：The relational algebra consists of a set of operations that take one or two relations as input and produce a new relation as their result.Some of these operations, such as the <strong>select</strong>, <strong>project</strong>, and <strong>rename</strong> operations, arecalled <em><strong>unary</strong></em> operations because they operate on one relation. The other operations,such as <strong>union</strong>, <strong>Cartesian product</strong>, and <strong>set difference</strong>, operate on pairs of relations and are, therefore, called <em><strong>binary</strong></em> operations.</p>
+<p>• <strong>Relational-algebra expression</strong>:in general, since the result of a relational-algebra operation is of the same type(relation) as its inputs, relational-algebra operations can be composed together into a<strong>relational-algebra expression</strong>. Composing relational-algebra operations into relational algebra expressions is just like composing arithmetic operations (such as +, −, ∗, and÷) into arithmetic expressions</p>
+<p>• Relational-algebra operations</p>
+<p>​	° Select σ</p>
+<p>​	° Project Π</p>
+<p>​	° Cartesian product ×</p>
+<p>​	° Join ⋈</p>
+<p>​	° Union ∪</p>
+<p>​	° Set difference −</p>
+<p>​	° Set intersection ∩</p>
+<p>​	° Assignment←</p>
+<p>​	° Rename ρ</p>
+<h2 id="CH-6"><a href="#CH-6" class="headerlink" title="CH.6"></a>CH.6</h2><p>• Design Process</p>
+<p>​	° Conceptual-design</p>
+<p>​	° Logical-design</p>
+<p>​	° Physical-design</p>
+<p>• <strong>Entity-relationship (E-R) data model</strong>:The entity-relationship (E-R) data model uses a collection of basic objects, called <em>entities</em>, and <em>relationships</em> among these objects.</p>
+<p>• <strong>Entity and entity set</strong>:An <strong>entity</strong> is a “thing” or “object” in the real world that is distinguishable from all other objects||An <strong>entity set</strong> is a set of entities of the same type that share the same properties,or attributes</p>
+<p>​	° Simple and composite attributes</p>
+<p>​	° Single-valued and multivalued attributes</p>
+<p>​	° <strong>Derived attribute</strong>:The value for this type of attribute can be derived from the val</p>
+<p>ues of other related attributes or entities</p>
+<p>• Key</p>
+<p>​	° Superkey</p>
+<p>​	° Candidate key</p>
+<p>​	° Primary key</p>
+<p>• Relationship and relationship set: <strong>relationship</strong> is an association among several entities||A <strong>relationship set</strong> is a set of relationships of the same type.The function that an entity plays in a relationship is called that entity’s <strong>role</strong>.</p>
+<p>​	° <strong>Binary relationship set</strong>：one that involves two entity sets</p>
+<p>​	° <strong>Degree of relationship set</strong>：The number of entity sets that participate in a relationship set is the <strong>degree of the</strong> <strong>relationship set</strong></p>
+<p>​	° <strong>Descriptive attributes</strong>:relationship may also have attributes</p>
+<p>​	° Superkey, candidate key, and primary key</p>
+<p>​	° <strong>Role</strong>：The function that an entity plays in a relationship is called that entity’s <strong>role</strong>.</p>
+<p>​	° Recursive relationship set</p>
+<p>• E-R diagram</p>
+<p>• Mapping cardinality:</p>
+<p>​	° One-to-one relationship</p>
+<p>​	° One-to-many relationship</p>
+<p>​	° Many-to-one relationship</p>
+<p>​	° Many-to-many relationship</p>
+<p>• Total and partial participation:<img src="C:\Users\唐浩钏\AppData\Roaming\Typora\typora-user-images\image-20231026012639150.png" alt="image-20231026012639150"></p>
+<p>• Weak entity sets and strong entity sets</p>
+<p>​	° Discriminator attributes:attributes to uniquely identify a weak entity</p>
+<p>​	° Identifying relationship</p>
+<p>• Specialization and generalization:The process of designating subgroupings</p>
+<p>within an entity set is called <strong>specialization</strong>,specialization relationship may also be referred to as a <strong>superclass-subclass</strong>relationship||</p>
+<p>• <strong>Aggregation</strong>:<strong>Aggregation</strong> is an abstraction through which relationships are treated as higher level entities</p>
+<p>• Design choices</p>
+<p>• United Modeling Language (UML)</p>
 
                 
             </div>
@@ -765,7 +753,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/">https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/</a>
+                    <a href="https://sion258.github.io/2023/10/24/shu-ju-ku-zhuan-you-ming-ci-ji-he/">https://sion258.github.io/2023/10/24/shu-ju-ku-zhuan-you-ming-ci-ji-he/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -802,11 +790,7 @@ public static void Parrtition(double[] a,int l,int r){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/algorithem/">
-                                    <span class="chip bg-color">algorithem</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -978,13 +962,13 @@ public static void Parrtition(double[] a,int l,int r){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/10/10/binary-search-tree/">
+                <a href="/2023/11/02/java-fu-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="BTS">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">BTS</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -995,7 +979,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-02
                         </span>
                         <span class="publish-author">
                             
@@ -1004,14 +988,6 @@ public static void Parrtition(double[] a,int l,int r){
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/algorithem/">
-                        <span class="chip bg-color">algorithem</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1023,13 +999,13 @@ public static void Parrtition(double[] a,int l,int r){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/07/hong-hei-shu/">
+                <a href="/2023/10/19/shu-ju-ku-fu-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="基础数据结构">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">基础数据结构</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1040,7 +1016,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-19
                             </span>
                         <span class="publish-author">
                             
@@ -1049,14 +1025,6 @@ public static void Parrtition(double[] a,int l,int r){
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
-                    </a>
-                    
                 </div>
                 
             </div>

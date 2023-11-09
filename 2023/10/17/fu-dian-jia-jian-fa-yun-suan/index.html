@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="阶段复习一, SION&#39;S BLOG">
+    <meta name="keywords" content="浮点加减运算, SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>阶段复习一 | SION&#39;S BLOG</title>
+    <title>浮点加减运算 | SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">阶段复习一</h1>
+                    <h1 class="description center-align post-title">浮点加减运算</h1>
                 </div>
             </div>
         </div>
@@ -433,8 +433,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/algorithem/">
-                                <span class="chip bg-color">algorithem</span>
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                                <span class="chip bg-color">计算机组成原理</span>
                             </a>
                         
                     </div>
@@ -449,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-07
+                    2023-10-17
                 </div>
                 
 
@@ -473,272 +473,70 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>主要是用来应对EXAM1的笔记，也用做博客参考吧。</p>
-<h1 id="复习目录"><a href="#复习目录" class="headerlink" title="复习目录"></a>复习目录</h1><ul>
-<li>算法分析</li>
-<li>分治思想</li>
-<li>比较排序</li>
-<li>二叉树</li>
+                <h1 id="浮点加减运算"><a href="#浮点加减运算" class="headerlink" title="浮点加减运算"></a>浮点加减运算</h1><p>浮点加减运算一般采用补码表示的浮点加减运算。</p>
+<p>普遍的，运算对于两个浮点数：<br>$$<br>X = 2^m * M_x ,Y = 2^n*M_y<br>$$<br>在运算中如果m和n相同，我们称两数同阶，加法计算时，只需将m和n相加，尾码单独进行加法计算即可，需要注意的是结果必须以规格化形式出现，因此需要<strong>规格化处理</strong>。</p>
+<p>另外，当两数的阶码不同时，我们需要进行<strong>对阶</strong>操作。</p>
+<h2 id="对阶"><a href="#对阶" class="headerlink" title="对阶"></a>对阶</h2><h3 id="对阶的选择"><a href="#对阶的选择" class="headerlink" title="对阶的选择"></a>对阶的选择</h3><p>显然地，我们对阶有两种情况，然而，当我们用大阶对小阶时，尾数部分左移动，高位部分被舍弃的话会对结果造成巨大影响，所以我们统一选择<strong>小阶对大阶</strong>的方法。这样我们舍去的就是较小的低位部分，对精度影响较小。</p>
+<h3 id="求阶位差"><a href="#求阶位差" class="headerlink" title="求阶位差"></a>求阶位差</h3><p>求m-n的值</p>
+<h3 id="调整尾数"><a href="#调整尾数" class="headerlink" title="调整尾数"></a>调整尾数</h3><ul>
+<li>若m-n&lt;0,将Mx→移动m-n位；</li>
+<li>若m-n&gt;0,将My→移动n-m位。</li>
 </ul>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><p>我们主要关注运行时间，运行时间中，我们主要关注增长量级。</p>
-<p>在输入规模足够大时，运行时间主要有增长量级决定，这时我们主要研究算法的<strong>渐进效率</strong>。</p>
-<h3 id="渐进记号"><a href="#渐进记号" class="headerlink" title="渐进记号"></a>渐进记号</h3><ul>
-<li><p>$$<br>\Theta<br>$$</p>
-<p>:严格的指出上下确界。用集合来表示就是</p>
+<p>注意将移动后多出的位数保留，称为<strong>保留附加位</strong>，保留附加位加入中间运算能够提高精度，在十进制运算中，我们一般也先算再取近似值，这是一样的经验。</p>
+<p>特别地，再IEEE754标准中，通常有3个保留位，从左到右依次是保护位，舍入位，粘位；舍入位右侧有非0数，那么粘位就为1，否则为0 。</p>
+<h2 id="尾数运算"><a href="#尾数运算" class="headerlink" title="尾数运算"></a>尾数运算</h2><p>移位之后的尾数，按照定点数的补码加减运算法则执行加减操作。</p>
+<h2 id="结果规格化"><a href="#结果规格化" class="headerlink" title="结果规格化"></a>结果规格化</h2><h3 id="上溢（右规格化）"><a href="#上溢（右规格化）" class="headerlink" title="上溢（右规格化）"></a>上溢（右规格化）</h3><p>解决：<strong>右规格化</strong></p>
+<p>当尾数符号位（双符号位）不同时，则表示尾数上溢出（顾名思义就是尾数向符号位进位了）。</p>
+<p>如果符号位为10或01，将尾数位依次→移1位，阶码位加1即可；注意10右移在左边添加1。</p>
+<h3 id="左规格化"><a href="#左规格化" class="headerlink" title="左规格化"></a>左规格化</h3><p>当尾数运算结果为11.1…或者00.0…需要左规，这个很好理解，左移直到出现11.0…或者00.1…，移动多少位，那么阶码就减多少。</p>
+<h2 id="舍入"><a href="#舍入" class="headerlink" title="舍入"></a>舍入</h2><h3 id="末位恒置1法"><a href="#末位恒置1法" class="headerlink" title="末位恒置1法"></a>末位恒置1法</h3><p>如果右规多出的位数中至少存在一个1，那么无论最低位是0还是1，都变成1。</p>
+<h3 id="0舍1入法"><a href="#0舍1入法" class="headerlink" title="0舍1入法"></a>0舍1入法</h3><p>如果最低位后一位是0，则舍弃，如果为1，则向末位进一。</p>
+<h2 id="溢出判断"><a href="#溢出判断" class="headerlink" title="溢出判断"></a>溢出判断</h2><p>当阶码为10或者01时表示溢出。</p>
+<h2 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h2><p>1.设<br>$$<br>X = 2^{-101} *(-0.101011),<br>Y = 2^{-010} *(0.001110)<br>$$<br>假设数的阶码为3位，均用补码表示，计算X+Y.</p>
+<p>按照步骤一步步来：</p>
+<p>首先将两数用补码形式表示出来（采用双符号位）：</p>
+<p>​	<br>$$<br>[X]<em>{补码} = 11011，11.010101,<br>[Y]</em>{补码} = 11110，00.001110<br>$$</p>
+<ul>
+<li><strong>对阶</strong>：</li>
+</ul>
+<p>$$<br>[\Delta E]<em>{补码} = [Ex]</em>{补码}+[-Ey]_{补码}<br>$$</p>
+<p>结果为11011+00010 = <strong>11</strong>101 = -3 &lt; 0;</p>
+<p>所以X需要右移3位，阶码加3，右移之后的X补码为11110，11.111010(101),在之后的运算中，保留位参加运算。</p>
+<ul>
+<li><strong>尾数运算</strong>：</li>
+</ul>
+<p>$$<br>[X]<em>{补码} + [Y]</em>{补码} = 11110,00.0011000(101)<br>$$</p>
+<ul>
+<li><p><strong>规格化处理</strong>：</p>
+<p>由于尾数部分结果为00.00…，需要进行左规处理，向左边移动两位，结果为11110，00.1100010(1).</p>
+</li>
+<li><p><strong>舍入处理</strong>：采用0舍1入法，为11110，00.1100011；采用末位恒置1法，最低位之后有1，则结果位11110，00.1100011.</p>
+</li>
+<li><p><strong>溢出判断</strong>：阶码符号位位11，没有溢出。</p>
 </li>
 </ul>
-<p>$$<br>\Theta(g(n)) = {f(n):存在c_1,c_和n_0,使得对所有的n&gt;=n_0,有0&lt;=c_1g(n)&lt;=f(n)&lt;=c_2g(n)}<br>$$</p>
-<p>可以想成”=”。</p>
+<p>最终结果为：<br>$$<br>2^{-010}*0.100011<br>$$</p>
+<h2 id="再次举例"><a href="#再次举例" class="headerlink" title="再次举例"></a>再次举例</h2><p>设<br>$$<br>X = 2^7*(25/32),Y=2^6*(-23/32)<br>$$<br>当阶码为5为（用双符号位）尾数位7位（用双符号位）,用补码二进制浮点运算方法计算X-Y（采用0舍1入法）。</p>
+<p>首先说一下这个换成二进制数，</p>
+<p>2^7是十进制表示，表示成二进制为2^111(7D = 111B)，25D= 11001B,除以32，32为2^5,x11001向左移动5位，所以X = 2^111* (0.11001),同理Y=2^110* (0.10111)<br>$$<br>[X]<em>{补码} = 00111,00.11001，<br>[-Y]</em>{补码} = 00110,00.10111<br>$$</p>
 <ul>
-<li>$$<br>O<br>$$</li>
+<li>对阶：</li>
 </ul>
-<p>：指出上确界。用集合表示就是：<br>$$<br>O(g(n))={f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=f(n)&lt;=cg(n)}<br>$$<br>可以想成f(n)&lt;=g(n)的表示。而o符号表示一个不那么紧邻的上确界。</p>
+<p>$$<br>[\Delta E_{补码}] = [E_x]<em>{补码} + [-E_y]</em>{补码} = 00001<br>$$</p>
+<p>Y的尾数向右移动1位，移动之[Y]_补码 = 00111，00.11011(1)</p>
 <ul>
-<li>$$<br>\Omega<br>$$</li>
+<li>尾数运算：</li>
 </ul>
-<p>:指出下确界。用集合表示就是：<br>$$<br>\Omega(g(n)) = {f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=cg(n)&lt;=f(n)}<br>$$<br>可以想成f(n)&gt;=g(n)的表示。而小写的w表示一个不那么紧邻的下确界，例如是n&lt;n^2的n。 </p>
-<h2 id="分治方法-Divide-and-Conquer"><a href="#分治方法-Divide-and-Conquer" class="headerlink" title="分治方法(Divide and Conquer)"></a>分治方法(Divide and Conquer)</h2><p>分治法(divide and conquer)是将问题分成规模更小的子问题，再分开解决之后合并的方法。因此主要为三步：</p>
+<p>$$<br>[X-Y]_{补码} = 00111，01.00100(1)<br>$$</p>
 <ul>
-<li><p><strong>分解：将问题分解成规模更小但相同的子问题</strong>；</p>
+<li>结果规格化：</li>
+</ul>
+<p>发生上溢出，右规1位，变为00.10010(01)，阶码加1，为01000，00.10010(01)</p>
+<ul>
+<li><p>溢出判断：</p>
+<p>阶码符号位为01，发生溢出。</p>
 </li>
-<li><p><strong>解决：递归地解决子问题，当子问题递归到足够小或者能直接解决，则停止递归；</strong></p>
-</li>
-<li><p><strong>合并：将子问题的解的集合合并成原问题的解</strong>。</p>
-<p>归并排序，快速排序和顺序查找便是用了这一思想，留着后面介绍。</p>
-<p>​</p>
-</li>
 </ul>
-<h3 id="分治方法的分析"><a href="#分治方法的分析" class="headerlink" title="分治方法的分析"></a>分治方法的分析</h3><h3 id="递归式"><a href="#递归式" class="headerlink" title="递归式"></a>递归式</h3><p>递归式可以很贴切的描述分支方法的过程,例如归并排序的运行时间用T(n)表示,那么T(n)可以递归地表示为：<br>$$<br>T(n) = 2{T(n/2)}+\Theta(n)<br>$$<br>求时间复杂度主要有三个方法：</p>
-<ul>
-<li>代入法：猜一个复杂度，然后用数学归纳法证明。</li>
-<li>递归树法：主要就是求树的高度，树的高度对于最大调用次数，主要的运行时间也取决于递归调用次数。</li>
-<li>主方法</li>
-</ul>
-<p>这里主要介绍主方法。</p>
-<h3 id="主方法"><a href="#主方法" class="headerlink" title="主方法"></a>主方法</h3><p>对于形如:<br>$$<br>T(n) = aT(n/b) + \Theta(n^c)<br>$$<br>其中a&gt;=1,b&gt;1</p>
-<p>case1:<br>$$<br>log_b a &lt; c<br>$$<br>时间复杂度O(n^c)</p>
-<p>case2:<br>$$<br>log_b a = c<br>$$<br>时间复杂度O(n^c*lgn)</p>
-<p>case3：<br>$$<br>log_b a &gt; c<br>$$<br>时间复杂度O(n^log_b a)</p>
-<p>简单来说，log_b a和c谁大，就是O(n^{大的那一方})，需要特别记忆的只是相等的情况。</p>
-<h2 id="比较排序-Comparsion-Sort"><a href="#比较排序-Comparsion-Sort" class="headerlink" title="比较排序(Comparsion Sort)"></a>比较排序(Comparsion Sort)</h2><p>主要是以比较为排序依据的算法:</p>
-<ul>
-<li>插入排序</li>
-<li>堆排序</li>
-<li>归并排序</li>
-<li>快速排序(以及随机化)</li>
-</ul>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>插入排序就是遍历所有的输入序列，将当前遍历的元素插入已排序的序列，插入也需要遍历已排序序列。</p>
-<p>伪代码：</p>
-<pre class="line-numbers language-none"><code class="language-none">for j = 2 to A.length:
-	key = A[j]
-	//Insert A[j] to sorted array A[1,...,j-1]
-	for i = j - 1 downto 1:
-		//if the current number &gt;key,then put current number to next position
-		if A[i] &gt; key:
-			A[i+1] = A[i]
-		else:
-			//the psition of current number is A[j]
-			A[i+1] = key
-			break
-	 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度:O(n^2)</p>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>  堆排序建立了一个二叉堆，利用小根堆或者大根来维护二叉堆，将根节点和最后一个节点交换，递归地用小根堆或者大根堆来更新二叉堆的算法。</p>
-<pre class="line-numbers language-none"><code class="language-none">//维护小根堆
-public static void heapify(double[] a,int i,int n){
-	int largest = i;//初始化最大值的下标为i
-	int left = 2*i+1;
-	int right = 2*i+2;
-	
-	if(left &lt; n&amp;&amp;a[left]&lt;=a[largest]) largest = left;//更新最大值下标
-	if(right &lt; n&amp;&amp;a[right]&lt;=a[largest]) largest = right;
-	if(largest != i){
-		swap(a[largest],a[i]);
-		heapify(a,largest,n);
-	}
-}
-public static void HeapSort(double[] a){
-		n = a.length;
-		for(int i = n/2-1;i&gt;=0;i--)
-			heapify(a,i,n);//建立大根堆
-		
-		for(int i = n-1;i&gt;=0;i--){
-			swap(a[0],a[i]);
-			heapify(a,0,i);//更新交换根节点和最后的节点的堆，并且交换后的最后的节点不参与更新，因此i——
-		}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<ul>
-<li>建立大（小）根堆；（从底部向顶部维护，因此是从n/2-1开始）</li>
-<li>交换保存着最大值最小的根节点；</li>
-<li>每交换一次，更新大（小）堆；</li>
-<li>大根堆输出从小到大，小根堆输出从大到小。</li>
-</ul>
-<p>时间复杂度:O(nlgn)。</p>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序的思想基于分治方法，分解，解决，合并。</p>
-<ul>
-<li><p>分解：找到每段序列的中点</p>
-</li>
-<li><p>解决：对足够小的序列进行排序，递归地调用</p>
-</li>
-<li><p>合并：将排序好的子序列进行合并</p>
-<p>循环不变式为：-  利用端点求中点-更新端点-处理左边</p>
-<p>，递归处理右边-利用当前端点归并排序</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void progress(double[] a,int l,int r){
-	if(l == r) return;
-	int mid = l + (r-l)/2;//防止溢出
-	progress(a,l,mid);
-	progress(a,mid+1,r);
-	MergeSort(a,l,mid,r);
-}
-public static void MergreSort(double[] a,int l,int r){
-	int[] arr = new int[r-l+1];
-	int p = mid + 1//右半的指针
-	int k = 0;//新数组的计数器
-	while(l&lt;=mid&amp;&amp;p&lt;=r){
-		if(a[l] &lt; a[p]){
-			arr[k++] = a[l++];
-		}elif(a[l] &gt; a[p]){
-			arr[k++] = a[p++];	
-		}
-	}//较小的存入新数组
-	while(l&lt;=mid)a[l++]//如果无操作(包括元素之间相等和某一方遍历完成)arr[k++] = a[l++];
-	while(p&lt;r)a[p++]arr[k++] = a[p++];
-	for(int i=l;i &lt;= r;i++) a[i] = arr[k-l];//转存回去
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<p>时间复杂度O(nlgn)。</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序和归并类似，不过快速排序不需要转存，是在原本数组上进行的“原址排序”。</p>
-<p>循环不变式为：- 更新划分-快速排序当前划分下的左半-快速排序当前划分下的右半。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void QuickSort(double[] a,int l,int r){
-	int p = Parrtition(a,l,r);
-	QuickSort(a,l,p);
-	QuickSort(a,p+1,r);
-}
-public static void Parrtition(double[] a,int l,int r){
-	x = a[r];
-	p = l - 1;
-	for(int i = 1;i&lt;r;i++){
-		p++;
-		if(a[i] &lt; x){
-			swap(a[p],a[i]);
-		}
-	}
-	swap(a[p+1],a[r]);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度为O(nlgn)，在划分为0和n-1的情况下退化为O(n^2)(T(n)=T(n-1)+O(n))。</p>
-<p>快速排序的随机化版本主要在选取主元时采用了随机化：</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void RandomParrtition(double[] a,int l,int r){
-	tmp = random.nextint(r-1)+l;
-	swap(a[tmp],a[r]);
-	return Parrtition(a,l,r);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>随便找一个下标和最右边的交换即可.</p>
-<p>时间复杂度为O(nlgn)。</p>
-<h3 id="比较排序的时间下界"><a href="#比较排序的时间下界" class="headerlink" title="比较排序的时间下界"></a>比较排序的时间下界</h3><p>根据决策树模型，对于n个元素排序，树的高度h对应调用次数，所有比较情况最多是一棵满二叉树的叶子节点的数量:2^h;所有比较情况至少是一颗完全二叉树的叶子节点的数量:n!，那么有了调用次数和n的关系：<br>$$<br>2^h &gt; n!<br>$$<br>通过斯特林公式可以大致得到时间复杂度为：<br>$$<br>\Omega(nlgn)<br>$$<br>所有的比较排序的时间下界就是这个。</p>
-<p>归并和堆排序是渐进最优的比较排序，是稳定的。</p>
-<h2 id="线性时间的排序-Linear-time-Sort"><a href="#线性时间的排序-Linear-time-Sort" class="headerlink" title="线性时间的排序(Linear time Sort)"></a>线性时间的排序(Linear time Sort)</h2><p>主要   是在线性时间O(n)完成的排序算法:</p>
-<ul>
-<li>计数排序</li>
-<li>基数排序</li>
-<li>桶排序</li>
-</ul>
-<h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>计数排序主要是对范围0<del>k的数组排序，为0</del>k的每个数字找到一个计数器，遍历一遍，出现一次这个数字变计数一次，最后将计数器求前缀和，找到每一个数的位置。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static double[] CountingSort(double[] a){
-	double[] c = new double[max(a)];
-	double[] b = new double[a.length];
-	
-	for(int i = 0;i &lt; a.length;i++){
-		x = a[i];
-		c[x]++;
-	}
-	for(int i = 1;i &lt;= max(a);i++){
-		c[i] = c[i-1]+c[i];
-	}
-	for(int i = 0;i &lt; a.length;i++){
-		x = a[i];;
-		b[c[x]] = a[i];
-		c[x]--;
-	}
-	return b;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度:O(n)。</p>
-<p>空间复杂度:O(n)。</p>
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>基数排序就是从最低有效位开始排序，到最高有效位，一共进行d轮排序，d是该数的位数，每一次排序应该是稳定排序，因为要保证下一次排序时，这一位相同的数字的相对位置不变。</p>
-<pre><code>public class RadixSort {
-// 获取数组中最大的数
-    public static int getMax(int[] arr) {
-        int max = arr[0];
-        for (int i = 1; i &lt; arr.length; i++) {
-            if (arr[i] &gt; max) {
-                max = arr[i];
-            }
-        }
-        return max;
-    }
-
-    // 使用计数排序对数组按照指定的位数进行排序
-    public static void countingSort(int[] arr, int exp) {
-        int n = arr.length;
-        int[] output = new int[n];
-        int[] count = new int[10];
-        Arrays.fill(count, 0);
-
-        // 统计每个数字的出现次数
-        for (int i = 0; i &lt; n; i++) {
-            count[(arr[i] / exp) % 10]++;
-        }
-
-        // 计算每个数字应该在输出数组中的位置
-        for (int i = 1; i &lt; 10; i++) {
-            count[i] += count[i - 1];
-        }
-
-        // 构建输出数组
-        for (int i = n - 1; i &gt;= 0; i--) {
-            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-            count[(arr[i] / exp) % 10]--;
-        }
-
-        // 将输出数组复制到原始数组中
-        for (int i = 0; i &lt; n; i++) {
-            arr[i] = output[i];
-        }
-    }
-
-    // 使用基数排序对数组进行排序
-    public static void radixSort(int[] arr) {
-        int max = getMax(arr);
-
-        // 从最低位到最高位依次进行排序
-        for (int exp = 1; max / exp &gt; 0; exp *= 10) {
-            countingSort(arr, exp);
-        }
-}**
-</code></pre>
-<p>时间复杂度位O(n);</p>
-<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>桶排序是将元素放入不同桶中，再对桶内元素进行排序。跟散列表（hash table）有类似之处。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static List&lt;integer&gt;[] BucketSort(double[] a){
-	int n = a.length;
-	List&lt;integer&gt;[] b = new List[n];//表示一个泛型数组，其中每个元素都是一个 List 对象，该 List 对象中存储的元素类型为 Integer
-	for(int i = 0;i &lt; n;i++){
-		b[i] = new ArrayList&lt;&gt;;
-	}
-    for(i = 0;i &lt; n;i++){
-    	b[(int)n*a[i]].add(a[i]); 
-    }
-    for(int i = 0; i &lt; n;i++){
-    	b[i].sort();
-    }
-    return b;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-
-<h2 id="二叉树-Binary-Search-Tree"><a href="#二叉树-Binary-Search-Tree" class="headerlink" title="二叉树(Binary Search Tree)"></a>二叉树(Binary Search Tree)</h2><p>单独讲</p>
 
                 
             </div>
@@ -765,7 +563,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/">https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/</a>
+                    <a href="https://sion258.github.io/2023/10/17/fu-dian-jia-jian-fa-yun-suan/">https://sion258.github.io/2023/10/17/fu-dian-jia-jian-fa-yun-suan/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -803,8 +601,8 @@ public static void Parrtition(double[] a,int l,int r){
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/algorithem/">
-                                    <span class="chip bg-color">algorithem</span>
+                                <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                                    <span class="chip bg-color">计算机组成原理</span>
                                 </a>
                             
                         </div>
@@ -978,13 +776,13 @@ public static void Parrtition(double[] a,int l,int r){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/10/10/binary-search-tree/">
+                <a href="/2023/10/19/shu-ju-ku-fu-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="BTS">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">BTS</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -995,7 +793,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-19
                         </span>
                         <span class="publish-author">
                             
@@ -1004,14 +802,6 @@ public static void Parrtition(double[] a,int l,int r){
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/algorithem/">
-                        <span class="chip bg-color">algorithem</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1023,13 +813,13 @@ public static void Parrtition(double[] a,int l,int r){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/07/hong-hei-shu/">
+                <a href="/2023/10/15/javalab/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="基础数据结构">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">基础数据结构</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1040,7 +830,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-15
                             </span>
                         <span class="publish-author">
                             
@@ -1049,14 +839,6 @@ public static void Parrtition(double[] a,int l,int r){
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
-                    </a>
-                    
                 </div>
                 
             </div>

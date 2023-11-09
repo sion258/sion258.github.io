@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="阶段复习一, SION&#39;S BLOG">
+    <meta name="keywords" content="SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>阶段复习一 | SION&#39;S BLOG</title>
+    <title>SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">阶段复习一</h1>
+                    <h1 class="description center-align post-title"></h1>
                 </div>
             </div>
         </div>
@@ -431,13 +431,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/algorithem/">
-                                <span class="chip bg-color">algorithem</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -449,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-10-07
+                    2023-10-15
                 </div>
                 
 
@@ -473,272 +469,254 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>主要是用来应对EXAM1的笔记，也用做博客参考吧。</p>
-<h1 id="复习目录"><a href="#复习目录" class="headerlink" title="复习目录"></a>复习目录</h1><ul>
-<li>算法分析</li>
-<li>分治思想</li>
-<li>比较排序</li>
-<li>二叉树</li>
-</ul>
-<h1 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h1><p>我们主要关注运行时间，运行时间中，我们主要关注增长量级。</p>
-<p>在输入规模足够大时，运行时间主要有增长量级决定，这时我们主要研究算法的<strong>渐进效率</strong>。</p>
-<h3 id="渐进记号"><a href="#渐进记号" class="headerlink" title="渐进记号"></a>渐进记号</h3><ul>
-<li><p>$$<br>\Theta<br>$$</p>
-<p>:严格的指出上下确界。用集合来表示就是</p>
-</li>
-</ul>
-<p>$$<br>\Theta(g(n)) = {f(n):存在c_1,c_和n_0,使得对所有的n&gt;=n_0,有0&lt;=c_1g(n)&lt;=f(n)&lt;=c_2g(n)}<br>$$</p>
-<p>可以想成”=”。</p>
-<ul>
-<li>$$<br>O<br>$$</li>
-</ul>
-<p>：指出上确界。用集合表示就是：<br>$$<br>O(g(n))={f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=f(n)&lt;=cg(n)}<br>$$<br>可以想成f(n)&lt;=g(n)的表示。而o符号表示一个不那么紧邻的上确界。</p>
-<ul>
-<li>$$<br>\Omega<br>$$</li>
-</ul>
-<p>:指出下确界。用集合表示就是：<br>$$<br>\Omega(g(n)) = {f(n):存在c和n_0,使得n&gt;=n_0,有0&lt;=cg(n)&lt;=f(n)}<br>$$<br>可以想成f(n)&gt;=g(n)的表示。而小写的w表示一个不那么紧邻的下确界，例如是n&lt;n^2的n。 </p>
-<h2 id="分治方法-Divide-and-Conquer"><a href="#分治方法-Divide-and-Conquer" class="headerlink" title="分治方法(Divide and Conquer)"></a>分治方法(Divide and Conquer)</h2><p>分治法(divide and conquer)是将问题分成规模更小的子问题，再分开解决之后合并的方法。因此主要为三步：</p>
-<ul>
-<li><p><strong>分解：将问题分解成规模更小但相同的子问题</strong>；</p>
-</li>
-<li><p><strong>解决：递归地解决子问题，当子问题递归到足够小或者能直接解决，则停止递归；</strong></p>
-</li>
-<li><p><strong>合并：将子问题的解的集合合并成原问题的解</strong>。</p>
-<p>归并排序，快速排序和顺序查找便是用了这一思想，留着后面介绍。</p>
-<p>​</p>
-</li>
-</ul>
-<h3 id="分治方法的分析"><a href="#分治方法的分析" class="headerlink" title="分治方法的分析"></a>分治方法的分析</h3><h3 id="递归式"><a href="#递归式" class="headerlink" title="递归式"></a>递归式</h3><p>递归式可以很贴切的描述分支方法的过程,例如归并排序的运行时间用T(n)表示,那么T(n)可以递归地表示为：<br>$$<br>T(n) = 2{T(n/2)}+\Theta(n)<br>$$<br>求时间复杂度主要有三个方法：</p>
-<ul>
-<li>代入法：猜一个复杂度，然后用数学归纳法证明。</li>
-<li>递归树法：主要就是求树的高度，树的高度对于最大调用次数，主要的运行时间也取决于递归调用次数。</li>
-<li>主方法</li>
-</ul>
-<p>这里主要介绍主方法。</p>
-<h3 id="主方法"><a href="#主方法" class="headerlink" title="主方法"></a>主方法</h3><p>对于形如:<br>$$<br>T(n) = aT(n/b) + \Theta(n^c)<br>$$<br>其中a&gt;=1,b&gt;1</p>
-<p>case1:<br>$$<br>log_b a &lt; c<br>$$<br>时间复杂度O(n^c)</p>
-<p>case2:<br>$$<br>log_b a = c<br>$$<br>时间复杂度O(n^c*lgn)</p>
-<p>case3：<br>$$<br>log_b a &gt; c<br>$$<br>时间复杂度O(n^log_b a)</p>
-<p>简单来说，log_b a和c谁大，就是O(n^{大的那一方})，需要特别记忆的只是相等的情况。</p>
-<h2 id="比较排序-Comparsion-Sort"><a href="#比较排序-Comparsion-Sort" class="headerlink" title="比较排序(Comparsion Sort)"></a>比较排序(Comparsion Sort)</h2><p>主要是以比较为排序依据的算法:</p>
-<ul>
-<li>插入排序</li>
-<li>堆排序</li>
-<li>归并排序</li>
-<li>快速排序(以及随机化)</li>
-</ul>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><p>插入排序就是遍历所有的输入序列，将当前遍历的元素插入已排序的序列，插入也需要遍历已排序序列。</p>
-<p>伪代码：</p>
-<pre class="line-numbers language-none"><code class="language-none">for j = 2 to A.length:
-	key = A[j]
-	//Insert A[j] to sorted array A[1,...,j-1]
-	for i = j - 1 downto 1:
-		//if the current number &gt;key,then put current number to next position
-		if A[i] &gt; key:
-			A[i+1] = A[i]
-		else:
-			//the psition of current number is A[j]
-			A[i+1] = key
-			break
-	 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+                <h1 id="上机实验题目"><a href="#上机实验题目" class="headerlink" title="上机实验题目"></a>上机实验题目</h1><p>主要记录一下Java程序设计的上机实验题目，提供题目和代码，可以参考</p>
+<p><img src="C:\Users\唐浩钏\document\python\题目一.png" alt="题目一"></p>
+<p>本来是面向过程，没有仔细审题，全部写成了面向过程的。不过也是可以参考的。</p>
+<h2 id="三角形周长和面积"><a href="#三角形周长和面积" class="headerlink" title="三角形周长和面积"></a>三角形周长和面积</h2><p>这个没什么好说的</p>
+<p>主要有一个LegalityJudgment，合法性判断是否构成一个三角形。我把它加入在setLength里面，如果不是三角形，就无法赋值，如果是才能赋值。</p>
+<p>另外就是鲁棒性的考量，能够支持多次输入，支持用户交互，这个是可以参考的。</p>
+<pre class="line-numbers language-none"><code class="language-none">import java.lang.*;
+import java.util.Scanner;
 
-<p>时间复杂度:O(n^2)</p>
-<h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>  堆排序建立了一个二叉堆，利用小根堆或者大根来维护二叉堆，将根节点和最后一个节点交换，递归地用小根堆或者大根堆来更新二叉堆的算法。</p>
-<pre class="line-numbers language-none"><code class="language-none">//维护小根堆
-public static void heapify(double[] a,int i,int n){
-	int largest = i;//初始化最大值的下标为i
-	int left = 2*i+1;
-	int right = 2*i+2;
-	
-	if(left &lt; n&amp;&amp;a[left]&lt;=a[largest]) largest = left;//更新最大值下标
-	if(right &lt; n&amp;&amp;a[right]&lt;=a[largest]) largest = right;
-	if(largest != i){
-		swap(a[largest],a[i]);
-		heapify(a,largest,n);
-	}
-}
-public static void HeapSort(double[] a){
-		n = a.length;
-		for(int i = n/2-1;i&gt;=0;i--)
-			heapify(a,i,n);//建立大根堆
-		
-		for(int i = n-1;i&gt;=0;i--){
-			swap(a[0],a[i]);
-			heapify(a,0,i);//更新交换根节点和最后的节点的堆，并且交换后的最后的节点不参与更新，因此i——
-		}
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+public class Triangle {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        label:
+        while (true) {
+            System.out.println("请输入三角形的三条边长：");
+            double l1 = scanner.nextDouble();
+            double l2 = scanner.nextDouble();
+            double l3 = scanner.nextDouble();
+            scanner.nextLine();
 
-<ul>
-<li>建立大（小）根堆；（从底部向顶部维护，因此是从n/2-1开始）</li>
-<li>交换保存着最大值最小的根节点；</li>
-<li>每交换一次，更新大（小）堆；</li>
-<li>大根堆输出从小到大，小根堆输出从大到小。</li>
-</ul>
-<p>时间复杂度:O(nlgn)。</p>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序的思想基于分治方法，分解，解决，合并。</p>
-<ul>
-<li><p>分解：找到每段序列的中点</p>
-</li>
-<li><p>解决：对足够小的序列进行排序，递归地调用</p>
-</li>
-<li><p>合并：将排序好的子序列进行合并</p>
-<p>循环不变式为：-  利用端点求中点-更新端点-处理左边</p>
-<p>，递归处理右边-利用当前端点归并排序</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void progress(double[] a,int l,int r){
-	if(l == r) return;
-	int mid = l + (r-l)/2;//防止溢出
-	progress(a,l,mid);
-	progress(a,mid+1,r);
-	MergeSort(a,l,mid,r);
-}
-public static void MergreSort(double[] a,int l,int r){
-	int[] arr = new int[r-l+1];
-	int p = mid + 1//右半的指针
-	int k = 0;//新数组的计数器
-	while(l&lt;=mid&amp;&amp;p&lt;=r){
-		if(a[l] &lt; a[p]){
-			arr[k++] = a[l++];
-		}elif(a[l] &gt; a[p]){
-			arr[k++] = a[p++];	
-		}
-	}//较小的存入新数组
-	while(l&lt;=mid)a[l++]//如果无操作(包括元素之间相等和某一方遍历完成)arr[k++] = a[l++];
-	while(p&lt;r)a[p++]arr[k++] = a[p++];
-	for(int i=l;i &lt;= r;i++) a[i] = arr[k-l];//转存回去
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li>
-</ul>
-<p>时间复杂度O(nlgn)。</p>
-<h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序和归并类似，不过快速排序不需要转存，是在原本数组上进行的“原址排序”。</p>
-<p>循环不变式为：- 更新划分-快速排序当前划分下的左半-快速排序当前划分下的右半。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void QuickSort(double[] a,int l,int r){
-	int p = Parrtition(a,l,r);
-	QuickSort(a,l,p);
-	QuickSort(a,p+1,r);
-}
-public static void Parrtition(double[] a,int l,int r){
-	x = a[r];
-	p = l - 1;
-	for(int i = 1;i&lt;r;i++){
-		p++;
-		if(a[i] &lt; x){
-			swap(a[p],a[i]);
-		}
-	}
-	swap(a[p+1],a[r]);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+            TriangleClass triangle = new TriangleClass();
+            triangle.setlength(l1, l2, l3);
 
-<p>时间复杂度为O(nlgn)，在划分为0和n-1的情况下退化为O(n^2)(T(n)=T(n-1)+O(n))。</p>
-<p>快速排序的随机化版本主要在选取主元时采用了随机化：</p>
-<pre class="line-numbers language-none"><code class="language-none">public static void RandomParrtition(double[] a,int l,int r){
-	tmp = random.nextint(r-1)+l;
-	swap(a[tmp],a[r]);
-	return Parrtition(a,l,r);
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>随便找一个下标和最右边的交换即可.</p>
-<p>时间复杂度为O(nlgn)。</p>
-<h3 id="比较排序的时间下界"><a href="#比较排序的时间下界" class="headerlink" title="比较排序的时间下界"></a>比较排序的时间下界</h3><p>根据决策树模型，对于n个元素排序，树的高度h对应调用次数，所有比较情况最多是一棵满二叉树的叶子节点的数量:2^h;所有比较情况至少是一颗完全二叉树的叶子节点的数量:n!，那么有了调用次数和n的关系：<br>$$<br>2^h &gt; n!<br>$$<br>通过斯特林公式可以大致得到时间复杂度为：<br>$$<br>\Omega(nlgn)<br>$$<br>所有的比较排序的时间下界就是这个。</p>
-<p>归并和堆排序是渐进最优的比较排序，是稳定的。</p>
-<h2 id="线性时间的排序-Linear-time-Sort"><a href="#线性时间的排序-Linear-time-Sort" class="headerlink" title="线性时间的排序(Linear time Sort)"></a>线性时间的排序(Linear time Sort)</h2><p>主要   是在线性时间O(n)完成的排序算法:</p>
-<ul>
-<li>计数排序</li>
-<li>基数排序</li>
-<li>桶排序</li>
-</ul>
-<h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>计数排序主要是对范围0<del>k的数组排序，为0</del>k的每个数字找到一个计数器，遍历一遍，出现一次这个数字变计数一次，最后将计数器求前缀和，找到每一个数的位置。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static double[] CountingSort(double[] a){
-	double[] c = new double[max(a)];
-	double[] b = new double[a.length];
-	
-	for(int i = 0;i &lt; a.length;i++){
-		x = a[i];
-		c[x]++;
-	}
-	for(int i = 1;i &lt;= max(a);i++){
-		c[i] = c[i-1]+c[i];
-	}
-	for(int i = 0;i &lt; a.length;i++){
-		x = a[i];;
-		b[c[x]] = a[i];
-		c[x]--;
-	}
-	return b;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>时间复杂度:O(n)。</p>
-<p>空间复杂度:O(n)。</p>
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>基数排序就是从最低有效位开始排序，到最高有效位，一共进行d轮排序，d是该数的位数，每一次排序应该是稳定排序，因为要保证下一次排序时，这一位相同的数字的相对位置不变。</p>
-<pre><code>public class RadixSort {
-// 获取数组中最大的数
-    public static int getMax(int[] arr) {
-        int max = arr[0];
-        for (int i = 1; i &lt; arr.length; i++) {
-            if (arr[i] &gt; max) {
-                max = arr[i];
+            System.out.println("如果你想获取面积，请输入“面积”，如果向获取周长，请输入“周长”，如果想结束程序，输入“结束”");
+            String str = scanner.nextLine();
+            switch (str) {
+                case "面积":
+                    System.out.println(triangle.getArea());
+                    break;
+                case "周长":
+                    System.out.println(triangle.getCircumference());
+                    break;
+                case "结束":
+                    break label;
+                default:
+                    System.out.println("您的输入有误&gt;&lt;,请重试");
+                    break;
             }
         }
-        return max;
+        scanner.close();
+    }
+}
+class TriangleClass{
+    double l1;
+    double l2;
+    double l3;
+    //合法性判断
+    private boolean LegalityJudgment(double a,double b,double c){
+        return !(a + b &lt;= c);
+    }
+    public void setlength(double a,double b,double c){
+        boolean sign = LegalityJudgment(a, b, c);
+
+        if(!sign) System.out.println("您的输入错误");
+        else{this.l1 = a;
+        this.l2 = b;
+        this.l3 = c;}
+    }
+    public double getCircumference(){
+        return l1+l2+l3;
+    }
+    public double getArea(){
+        double p = getCircumference()/2;
+        return Math.sqrt(p*(p-l1)*(p-l2)*(p-l3));
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="解方程"><a href="#解方程" class="headerlink" title="解方程"></a>解方程</h2><p>这个主要考虑delta的情况，没什么好说的。</p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+
+public class equationsSolve {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double a = scanner.nextDouble();
+        double b = scanner.nextDouble();
+        double c = scanner.nextDouble();
+        equationSolver equationsolver = new equationSolver();
+        equationsolver.setABC(a, b, c);
+        equationsolver.sovle();
+    }
+}
+class equationSolver{
+    double a;
+    double b;
+    double c;
+    public void setABC(double A,double B,double C) {
+        this.a = A;
+        this.b = B;
+        this.c = C;
+    }
+    public void sovle() {
+        double delta = b * b - 4 * a * c;
+
+        if (delta &lt; 0) System.out.println("无实数跟");
+        else if (delta &gt; 0) {
+            double x1 = (-b - Math.sqrt(delta)) / 2 * a;
+            double x2 = (-b + Math.sqrt(delta)) / 2 * a;
+            System.out.print(x1+ " ");
+            System.out.println(x2);
+        } else {
+            double x = (-b / 2) * a;
+            System.out.println(x);
+        }
+    }
+}
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="输出菱形"><a href="#输出菱形" class="headerlink" title="输出菱形"></a>输出菱形</h2><p>算是经典的入门题，主要控制“ ”，“*”，“\n”与行数，列数的关系。</p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
+
+public class Lozenge {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int rows = scanner.nextInt();
+        LozengeClass lozengeClass = new LozengeClass();
+        lozengeClass.setRows(rows);
+        lozengeClass.solve();
+    }
+}
+
+class LozengeClass {
+    int rows;
+
+    public void setRows(int row){
+        this.rows = row;
     }
 
-    // 使用计数排序对数组按照指定的位数进行排序
-    public static void countingSort(int[] arr, int exp) {
-        int n = arr.length;
-        int[] output = new int[n];
-        int[] count = new int[10];
-        Arrays.fill(count, 0);
-
-        // 统计每个数字的出现次数
-        for (int i = 0; i &lt; n; i++) {
-            count[(arr[i] / exp) % 10]++;
+    // 上半部分
+    public void solve() {
+        int spaces = rows - 1;
+        int stars = 1;
+        for (int i = 1; i &lt;= rows; i++) {
+            for (int j = 1; j &lt;= spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j &lt;= stars; j++) {
+                if (j == 1 || j == stars) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            spaces--;
+            stars += 2;
         }
 
-        // 计算每个数字应该在输出数组中的位置
-        for (int i = 1; i &lt; 10; i++) {
-            count[i] += count[i - 1];
-        }
-
-        // 构建输出数组
-        for (int i = n - 1; i &gt;= 0; i--) {
-            output[count[(arr[i] / exp) % 10] - 1] = arr[i];
-            count[(arr[i] / exp) % 10]--;
-        }
-
-        // 将输出数组复制到原始数组中
-        for (int i = 0; i &lt; n; i++) {
-            arr[i] = output[i];
+        // 下半部分
+        spaces = 1;
+        stars = rows * 2 - 3;
+        for (int i = 1; i &lt;= rows - 1; i++) {
+            for (int j = 1; j &lt;= spaces; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j &lt;= stars; j++) {
+                if (j == 1 || j == stars) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            spaces++;
+            stars -= 2;
         }
     }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-    // 使用基数排序对数组进行排序
-    public static void radixSort(int[] arr) {
-        int max = getMax(arr);
+<h2 id="质数"><a href="#质数" class="headerlink" title="质数"></a>质数</h2><p>下次试试更高级的方法。</p>
+<p>这里单纯就是二重循环判断</p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
 
-        // 从最低位到最高位依次进行排序
-        for (int exp = 1; max / exp &gt; 0; exp *= 10) {
-            countingSort(arr, exp);
+public class Primenumber {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int[] b =new int[a];
+        for(int i = 0;i &lt; b.length;i++){
+            b[i] = scanner.nextInt();
         }
-}**
-</code></pre>
-<p>时间复杂度位O(n);</p>
-<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>桶排序是将元素放入不同桶中，再对桶内元素进行排序。跟散列表（hash table）有类似之处。</p>
-<pre class="line-numbers language-none"><code class="language-none">public static List&lt;integer&gt;[] BucketSort(double[] a){
-	int n = a.length;
-	List&lt;integer&gt;[] b = new List[n];//表示一个泛型数组，其中每个元素都是一个 List 对象，该 List 对象中存储的元素类型为 Integer
-	for(int i = 0;i &lt; n;i++){
-		b[i] = new ArrayList&lt;&gt;;
-	}
-    for(i = 0;i &lt; n;i++){
-    	b[(int)n*a[i]].add(a[i]); 
+        Primenumberselector primenumberselector = new Primenumberselector();
+        primenumberselector.setArray(b);
+        System.out.println(primenumberselector.solve());
     }
-    for(int i = 0; i &lt; n;i++){
-    	b[i].sort();
+}
+
+class Primenumberselector{
+    private int[] a;
+    public void setArray(int[] A){
+        this.a = A;
     }
-    return b;
-}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+    public int solve() {
+        int count = 0;
+        for (int k : a) {
+            boolean isPrime = k &gt; 1;
+            for (int j = 2; j * j &lt;= k; j++) {
+                if (k % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime) {
+                count++;
+            }
+        }
+        return count;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
+<h2 id="基于ASCII的加密和解密"><a href="#基于ASCII的加密和解密" class="headerlink" title="基于ASCII的加密和解密"></a>基于ASCII的加密和解密</h2><p>很基础的题目，看代码，</p>
+<pre class="line-numbers language-none"><code class="language-none">import java.util.Scanner;
 
-<h2 id="二叉树-Binary-Search-Tree"><a href="#二叉树-Binary-Search-Tree" class="headerlink" title="二叉树(Binary Search Tree)"></a>二叉树(Binary Search Tree)</h2><p>单独讲</p>
+public class UnlockASII {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+
+        System.out.println("Original string: " + input);
+
+        String encryptedString = encrypt(input);
+        System.out.println("Encrypted string: " + encryptedString);
+
+        String decryptedString = decrypt(encryptedString);
+        System.out.println("Decrypted string: " + decryptedString);
+        }
+    public static String encrypt(String input) {
+        StringBuilder encrypted = new StringBuilder();
+        for (int i = 0; i &lt; input.length(); i++) {
+            int ascii = (int) input.charAt(i);
+            ascii += 1; // Shift each character by 1
+            encrypted.append((char) ascii);
+        }
+        return encrypted.toString();
+    }
+
+    public static String decrypt(String encryptedString) {
+        StringBuilder decrypted = new StringBuilder();
+        for (int i = 0; i &lt; encryptedString.length(); i++) {
+            int ascii = (int) encryptedString.charAt(i);
+            ascii -= 1; // Shift each character back by 1
+            decrypted.append((char) ascii);
+        }
+        return decrypted.toString();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -765,7 +743,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/">https://sion258.github.io/2023/10/07/jie-duan-fu-xi-yi/</a>
+                    <a href="https://sion258.github.io/2023/10/15/javalab/">https://sion258.github.io/2023/10/15/javalab/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -802,11 +780,7 @@ public static void Parrtition(double[] a,int l,int r){
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/algorithem/">
-                                    <span class="chip bg-color">algorithem</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -978,13 +952,13 @@ public static void Parrtition(double[] a,int l,int r){
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/10/10/binary-search-tree/">
+                <a href="/2023/10/17/fu-dian-jia-jian-fa-yun-suan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="BTS">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="浮点加减运算">
                         
-                        <span class="card-title">BTS</span>
+                        <span class="card-title">浮点加减运算</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -995,7 +969,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-10
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-10-17
                         </span>
                         <span class="publish-author">
                             
@@ -1008,8 +982,8 @@ public static void Parrtition(double[] a,int l,int r){
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/algorithem/">
-                        <span class="chip bg-color">algorithem</span>
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/">
+                        <span class="chip bg-color">计算机组成原理</span>
                     </a>
                     
                 </div>
@@ -1023,13 +997,13 @@ public static void Parrtition(double[] a,int l,int r){
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/07/hong-hei-shu/">
+                <a href="/2023/10/11/java-swing-xiang-guan-xue-xi-bi-ji/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="基础数据结构">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
                         
-                        <span class="card-title">基础数据结构</span>
+                        <span class="card-title"></span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1040,7 +1014,7 @@ public static void Parrtition(double[] a,int l,int r){
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-11
                             </span>
                         <span class="publish-author">
                             
@@ -1049,14 +1023,6 @@ public static void Parrtition(double[] a,int l,int r){
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/algorithm/">
-                        <span class="chip bg-color">algorithm</span>
-                    </a>
-                    
                 </div>
                 
             </div>
