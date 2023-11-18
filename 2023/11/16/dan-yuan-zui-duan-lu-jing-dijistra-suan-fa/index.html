@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SION&#39;S BLOG">
+    <meta name="keywords" content="Dijistra, SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SION&#39;S BLOG</title>
+    <title>Dijistra | SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Dijistra</h1>
                 </div>
             </div>
         </div>
@@ -431,9 +431,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/algorithm/">
+                                <span class="chip bg-color">algorithm</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -445,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-02
+                    2023-11-16
                 </div>
                 
 
@@ -469,62 +473,131 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JAVA复习"><a href="#JAVA复习" class="headerlink" title="JAVA复习"></a>JAVA复习</h1><ul>
-<li><p><strong>protected</strong>修饰的类方法只能被<strong>同一包的其他类或者子类</strong>访问，<strong>继承的类</strong>不能访问</p>
-</li>
-<li><p>public，protected，private，default(与protected类似)，final（类不能被继承，变量不能被修改）,s<strong>tatic（修饰的方法调用时通过类名，无需实例</strong>）,abstract（不能实例化）的,synchronized用法</p>
-</li>
-<li><p>java中的集合类（如Vector）可以用来存储任何类型的对象，且大小可以自动调整。不需要事先知道所存储对象的类型。</p>
-</li>
-<li><p>String类的对象在常量池中，一旦创建不能修改，StringBuffer可以进行修改，字符串的容量指的是字符串的长度不是个数，空字符和被删除的字符是不占容量的</p>
-</li>
-<li><p>JVM的虚拟机是自动进行，无法人为分配</p>
-</li>
-<li><p>super关键字是用来调用父类的有参数构造方法，而且必须在第一行实现，无参构造方法在子类可以无条件调用，只有有参的构造方法的父类在调用的时候会发生错误</p>
-</li>
-<li><p>调用start方法之后。线程进入Runable状态。由于存在调度和优先级的问题，还不一定能立即执行。调用wait方法后当前线程被终止，让出cpu使用权，直到notify来唤醒。调用yield方法后当前线程中断，随机调用一个线程，也包括档当前线程。</p>
-</li>
-<li><p>关于构造方法，构造方法的返回类型随意，名称一定与类名相同，可以带参数可以不带，可以定义多个构造函数，接受不同参数，返回类型可以相同</p>
-</li>
-<li><p>接口类的修饰符默认是public abstract，变量的修饰符默认是public static final，实现接口类必须实现所有方法，除非它也是抽象类，可以选择能只实现一部分方法</p>
-</li>
-<li><p>JFrame，WIndow，JDialog，JApplet都是顶层容器，JFrame，Window，JDialog的默认布局是Borderout，JPanel，JApplet是Flowerout</p>
-</li>
-<li><p>关于java里的冠宇集合框架：ArrayList的随机访问和随机访问效率高，Linklist的插入删除效率高</p>
-</li>
-<li><p>创建类的对象中先加载父类再加载子类，其中先加载静态方法再加载其他，这是因为静态方法的在初始化时就完成了（类的加载：加载-验证-准备-解析-初始化）</p>
-</li>
-<li><p>float类型直到在小数点后6到7位</p>
-</li>
-<li><p>this关键字时类在对象内部对自身的指代，表示当前正在执行的方法，只能在构造方法和静态方法中使用，this关键字可以指明同名的实例变量和局部变量中的实例变量，this关键字可以传参可以作为返回值</p>
-</li>
-<li><p>static修饰的方法是类方法，无需实例化，通过类名调用</p>
-</li>
-<li><p>JAVA的版本：JAVA2 EE，JAVA2 Card，JAVA2 ME，JAVA2 HE</p>
-</li>
-<li><p>“==“是地址判断，”equal“是值判断，值传递是单向，因调用方法而传入的参数是不会因为方法中的赋值操作而改变的</p>
-</li>
-<li><p>Character读取字符串，byte读取字符</p>
-</li>
-<li><p>组件可以有多个监听器，而且任意调用addXXListener方法多次，而且没有次序的区别</p>
-</li>
-<li><p>没有初始化的变量编译不能通过</p>
-</li>
-<li><p>环境变量包括class path，path，JAVA_HOME:jdk的安装位置</p>
-</li>
-<li><p>javac.exe是编译.java文件<br>java.class是执行编译好的.class文件<br>javadoc.exe是生成Java说明文档<br>jdb.exe是Java调试器<br>javaprof.exe是剖析工具</p>
-</li>
-<li><p>StringBuilder不是线程安全的，如果你只是在单线程中使用字符串缓冲区，那么s\StringBuilder的效率会更高些</p>
-</li>
-<li><p>java的三个默认类加载器是BootStrapClassLoader（在路径JAVA_HOME/jre的lib里的jar，负责加载java基础类），ExtensionClassLoader（在路径JAVA_HOME/jre/lib/ext和class，负责加载java扩展类），AppClassLoader（负责加载当前java应用的classpath中的所有类），ClassLoader使用的是<strong>双亲委托模型</strong>来搜索类的 ，向父加载器提交搜索委托，然后向子类查找。</p>
-</li>
-<li><p>classloader 加载类用的是<strong>全盘负责委托机制</strong>。 所谓全盘负责，即是当一个classloader加载一个Class的时候，这个Class所依赖的和引用的所有 Class也由这个classloader负责载入，除非是显式的使用另外一个classloader载入。<br>所以，当我们自定义的classlo ader加载成功了 com.company.MyClass以后，MyClass里所有依赖的class都由这个classLoader来加载完成</p>
-</li>
-<li><p>方法的重写（override）两同两小一大原则：<br>方法名相同，参数类型相同<br>子类返回类型小于等于父类方法返回类型，<br>子类抛出异常小于等于父类方法抛出异常，<br>子类访问权限大于等于父类方法访问权限</p>
-</li>
-<li><p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：<br>1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。<br>2）禁止进行指令重排序</p>
-</li>
+                <h1 id="单源最小路径问题"><a href="#单源最小路径问题" class="headerlink" title="单源最小路径问题"></a>单源最小路径问题</h1><p>[TOC]</p>
+<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p><strong>单源最小路径问题</strong>描述了一个n结点的有向图G中一个点v0到各个结点的最小路径问题。如图：</p>
+<p>![屏幕截图 2023-11-16 204412](C:\Users\唐浩钏\Pictures\Screenshots\屏幕截图 2023-11-16 204412.png)</p>
+<p>Dijistra法利用贪心选择性质和最优子结构找到局部最优解来保证整体最优解，下面我们来介绍一下Dijistra法。</p>
+<h2 id="Dijistra算法"><a href="#Dijistra算法" class="headerlink" title="Dijistra算法"></a>Dijistra算法</h2><p>假设已经构造i条最短路径，下一条生成的路径是下一条的最短路径。</p>
+<p>描述最短路径的生成规则：<strong>按照非降次序依次生成v0到个节点的路径</strong>：</p>
+<p>设集合S是已经生成v0到各节点的最短路径的结点集合，设u是S外一点，<strong>dist(u</strong>)是经过S中结点，且在u结点结束的路径的长度**。</p>
+<p>![屏幕截图 2023-11-16 204014](C:\Users\唐浩钏\Pictures\Screenshots\屏幕截图 2023-11-16 204014.png)</p>
+<ul>
+<li>设w是从v0到u的路径上的结点，由于到u的路径一定经过S中的结点，根据生成规则，按非降次序生成最小路径，所以w一定在S集合中，所以在v0到u的路径上的点都已经生成最小路径；</li>
+<li>生成的下一条路径的终点u是S外dist(u)最小的结点（按非降次序）；</li>
+<li>如果找到这样的u且生成了从v0到u的最短路径,将u加入集合S。此时从v0经过u终点为S外一点u的最小路径可能会变小，因为可能经过u到w的路径更短，这时dist(w) = min(dist(w),dist(u) + c(u,w))。</li>
 </ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment">#Dijistra法解决单源最小路径问题</span>
+<span class="token comment">#描述一个邻接矩cost(n,m)代表有向图中n到m之间的距离,没有连线的为无限大</span>
+<span class="token comment">#v是存放结点的数组，n是结点的个数，dist是从v0到某一点的最短路径</span>
+<span class="token keyword">def</span> SHORT<span class="token operator">-</span>PATH<span class="token punctuation">(</span>v<span class="token punctuation">,</span>cost<span class="token punctuation">,</span>dist<span class="token punctuation">,</span>n<span class="token punctuation">)</span>：
+	S <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token boolean">False</span><span class="token punctuation">]</span><span class="token operator">*</span>n<span class="token punctuation">;</span>
+	<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+		
+		dist<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+		<span class="token comment">#false代表不在S里，true代表在S里</span>
+		s<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> false
+	s<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token boolean">True</span>
+    dist<span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+    
+    <span class="token keyword">for</span> num <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span>n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token comment">#按非降次序选入不在S中的（还没有生成最小路径的）dist[x],找到dist[x]最小的结点x</span>
+        u <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span><span class="token punctuation">(</span>i <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token keyword">if</span> <span class="token keyword">not</span> s<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">,</span>key <span class="token operator">=</span> <span class="token keyword">lambda</span> x<span class="token punctuation">:</span>dist<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        s<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> true
+        
+        <span class="token keyword">for</span> w <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> <span class="token keyword">not</span> s<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                dist<span class="token punctuation">[</span>w<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">min</span><span class="token punctuation">(</span>dis<span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">,</span>dist<span class="token punctuation">[</span>u<span class="token punctuation">]</span> <span class="token operator">+</span> cost<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">[</span>w<span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><p>![屏幕截图 2023-11-17 121356](C:\Users\唐浩钏\Pictures\Screenshots\屏幕截图 2023-11-17 121356.png)</p>
+<table>
+<thead>
+<tr>
+<th>迭代</th>
+<th>选取的结点</th>
+<th>S</th>
+<th>dist(1)</th>
+<th>dist(2)</th>
+<th>dist(3)</th>
+<th>dist(4)</th>
+<th>dist(5)</th>
+<th>dist(6)</th>
+<th>dist(7)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>初始化</td>
+<td>-</td>
+<td>1</td>
+<td>0</td>
+<td>20</td>
+<td>50</td>
+<td>30</td>
+<td>MAX</td>
+<td>MAX</td>
+<td>MAX</td>
+</tr>
+<tr>
+<td>1</td>
+<td>2</td>
+<td>1，2</td>
+<td>0</td>
+<td>20</td>
+<td>45</td>
+<td>30</td>
+<td>MAX</td>
+<td>90</td>
+<td>MAX</td>
+</tr>
+<tr>
+<td>2</td>
+<td>4</td>
+<td>1，2，4</td>
+<td>0</td>
+<td>20</td>
+<td>45</td>
+<td>30</td>
+<td>85</td>
+<td>90</td>
+<td>MAX</td>
+</tr>
+<tr>
+<td>3</td>
+<td>3</td>
+<td>1，2，3，4</td>
+<td>0</td>
+<td>20</td>
+<td>45</td>
+<td>30</td>
+<td>70</td>
+<td>90</td>
+<td>MAX</td>
+</tr>
+<tr>
+<td>4</td>
+<td>5</td>
+<td>1，2，3，4，5</td>
+<td>0</td>
+<td>20</td>
+<td>45</td>
+<td>30</td>
+<td>70</td>
+<td>80</td>
+<td>140</td>
+</tr>
+<tr>
+<td>5</td>
+<td>6</td>
+<td>1，2，3，4，5，6</td>
+<td>0</td>
+<td>20</td>
+<td>45</td>
+<td>30</td>
+<td>70</td>
+<td>80</td>
+<td>130</td>
+</tr>
+</tbody></table>
+<p>建议手推一遍，发现dist[u]来自要么是上一个生成的最小路径加上上一个最小路径的终点到u的距离和，要么是从v0到u的距离dist[u]（不连通就是无限大）。</p>
 
                 
             </div>
@@ -551,7 +624,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/11/02/java-fu-xi/">https://sion258.github.io/2023/11/02/java-fu-xi/</a>
+                    <a href="https://sion258.github.io/2023/11/16/dan-yuan-zui-duan-lu-jing-dijistra-suan-fa/">https://sion258.github.io/2023/11/16/dan-yuan-zui-duan-lu-jing-dijistra-suan-fa/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,7 +661,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/algorithm/">
+                                    <span class="chip bg-color">algorithm</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -760,6 +837,51 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2023/11/18/zui-xiao-sheng-cheng-shu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Prime&amp;Kruskal">
+                        
+                        <span class="card-title">Prime&amp;Kruskal</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Sion
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2023/11/09/b-shu/">
                     <div class="card-image">
                         
@@ -776,45 +898,8 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            Sion
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2023/10/24/shu-ju-ku-zhuan-you-ming-ci-ji-he/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
-                        
-                        <span class="card-title"></span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
                             </span>
                         <span class="publish-author">
                             

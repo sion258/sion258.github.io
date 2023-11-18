@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SION&#39;S BLOG">
+    <meta name="keywords" content="Prime&amp;Kruskal, SION&#39;S BLOG">
     <meta name="description" content="Study,Code,Computer science">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SION&#39;S BLOG</title>
+    <title>Prime&amp;Kruskal | SION&#39;S BLOG</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -312,12 +312,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">Prime&amp;Kruskal</h1>
                 </div>
             </div>
         </div>
@@ -431,9 +431,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/algorithm/">
+                                <span class="chip bg-color">algorithm</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -445,7 +449,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-02
+                    2023-11-18
                 </div>
                 
 
@@ -469,62 +473,121 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JAVA复习"><a href="#JAVA复习" class="headerlink" title="JAVA复习"></a>JAVA复习</h1><ul>
-<li><p><strong>protected</strong>修饰的类方法只能被<strong>同一包的其他类或者子类</strong>访问，<strong>继承的类</strong>不能访问</p>
-</li>
-<li><p>public，protected，private，default(与protected类似)，final（类不能被继承，变量不能被修改）,s<strong>tatic（修饰的方法调用时通过类名，无需实例</strong>）,abstract（不能实例化）的,synchronized用法</p>
-</li>
-<li><p>java中的集合类（如Vector）可以用来存储任何类型的对象，且大小可以自动调整。不需要事先知道所存储对象的类型。</p>
-</li>
-<li><p>String类的对象在常量池中，一旦创建不能修改，StringBuffer可以进行修改，字符串的容量指的是字符串的长度不是个数，空字符和被删除的字符是不占容量的</p>
-</li>
-<li><p>JVM的虚拟机是自动进行，无法人为分配</p>
-</li>
-<li><p>super关键字是用来调用父类的有参数构造方法，而且必须在第一行实现，无参构造方法在子类可以无条件调用，只有有参的构造方法的父类在调用的时候会发生错误</p>
-</li>
-<li><p>调用start方法之后。线程进入Runable状态。由于存在调度和优先级的问题，还不一定能立即执行。调用wait方法后当前线程被终止，让出cpu使用权，直到notify来唤醒。调用yield方法后当前线程中断，随机调用一个线程，也包括档当前线程。</p>
-</li>
-<li><p>关于构造方法，构造方法的返回类型随意，名称一定与类名相同，可以带参数可以不带，可以定义多个构造函数，接受不同参数，返回类型可以相同</p>
-</li>
-<li><p>接口类的修饰符默认是public abstract，变量的修饰符默认是public static final，实现接口类必须实现所有方法，除非它也是抽象类，可以选择能只实现一部分方法</p>
-</li>
-<li><p>JFrame，WIndow，JDialog，JApplet都是顶层容器，JFrame，Window，JDialog的默认布局是Borderout，JPanel，JApplet是Flowerout</p>
-</li>
-<li><p>关于java里的冠宇集合框架：ArrayList的随机访问和随机访问效率高，Linklist的插入删除效率高</p>
-</li>
-<li><p>创建类的对象中先加载父类再加载子类，其中先加载静态方法再加载其他，这是因为静态方法的在初始化时就完成了（类的加载：加载-验证-准备-解析-初始化）</p>
-</li>
-<li><p>float类型直到在小数点后6到7位</p>
-</li>
-<li><p>this关键字时类在对象内部对自身的指代，表示当前正在执行的方法，只能在构造方法和静态方法中使用，this关键字可以指明同名的实例变量和局部变量中的实例变量，this关键字可以传参可以作为返回值</p>
-</li>
-<li><p>static修饰的方法是类方法，无需实例化，通过类名调用</p>
-</li>
-<li><p>JAVA的版本：JAVA2 EE，JAVA2 Card，JAVA2 ME，JAVA2 HE</p>
-</li>
-<li><p>“==“是地址判断，”equal“是值判断，值传递是单向，因调用方法而传入的参数是不会因为方法中的赋值操作而改变的</p>
-</li>
-<li><p>Character读取字符串，byte读取字符</p>
-</li>
-<li><p>组件可以有多个监听器，而且任意调用addXXListener方法多次，而且没有次序的区别</p>
-</li>
-<li><p>没有初始化的变量编译不能通过</p>
-</li>
-<li><p>环境变量包括class path，path，JAVA_HOME:jdk的安装位置</p>
-</li>
-<li><p>javac.exe是编译.java文件<br>java.class是执行编译好的.class文件<br>javadoc.exe是生成Java说明文档<br>jdb.exe是Java调试器<br>javaprof.exe是剖析工具</p>
-</li>
-<li><p>StringBuilder不是线程安全的，如果你只是在单线程中使用字符串缓冲区，那么s\StringBuilder的效率会更高些</p>
-</li>
-<li><p>java的三个默认类加载器是BootStrapClassLoader（在路径JAVA_HOME/jre的lib里的jar，负责加载java基础类），ExtensionClassLoader（在路径JAVA_HOME/jre/lib/ext和class，负责加载java扩展类），AppClassLoader（负责加载当前java应用的classpath中的所有类），ClassLoader使用的是<strong>双亲委托模型</strong>来搜索类的 ，向父加载器提交搜索委托，然后向子类查找。</p>
-</li>
-<li><p>classloader 加载类用的是<strong>全盘负责委托机制</strong>。 所谓全盘负责，即是当一个classloader加载一个Class的时候，这个Class所依赖的和引用的所有 Class也由这个classloader负责载入，除非是显式的使用另外一个classloader载入。<br>所以，当我们自定义的classlo ader加载成功了 com.company.MyClass以后，MyClass里所有依赖的class都由这个classLoader来加载完成</p>
-</li>
-<li><p>方法的重写（override）两同两小一大原则：<br>方法名相同，参数类型相同<br>子类返回类型小于等于父类方法返回类型，<br>子类抛出异常小于等于父类方法抛出异常，<br>子类访问权限大于等于父类方法访问权限</p>
-</li>
-<li><p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：<br>1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。<br>2）禁止进行指令重排序</p>
+                <p>[TOC]</p>
+<h1 id="最小生成树"><a href="#最小生成树" class="headerlink" title="最小生成树"></a>最小生成树</h1><h2 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h2><p>生成树：设G = （V，E）是一个无向连通图，如果G的生成子图T = （V，E‘）是一棵树，则T就是G的一棵生成树。包含图的所有顶点和部分边</p>
+<p>最小生成树：图的权值和最小的一棵生成树。</p>
+<h2 id="贪心策略"><a href="#贪心策略" class="headerlink" title="贪心策略"></a>贪心策略</h2><p>选择能使迄今为止所计入的边的成本和增加得最小的那条边。</p>
+<h2 id="Prim算法"><a href="#Prim算法" class="headerlink" title="Prim算法"></a>Prim算法</h2><p>设集合S是已经选择的边构成的一棵树，下一条将加入S的边（u，v）是U（G的点集）中但不在S中的，且使得SU{（u，v）}的最小成本边。</p>
+<p>步骤：</p>
+<ul>
+<li>初始化变量，设U是G的点集，S是找到的点的集合；</li>
+<li>随机选择点a，将a加入集合S；</li>
+<li>寻找下一个加入的点：<ul>
+<li>找到一个顶点在S中，一个顶点在U-S中的最小权值；</li>
+<li>将最小权值的边在U-S中的点加入S；</li>
+<li>重复，直到所有点都在S中；</li>
+</ul>
 </li>
 </ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">prim</span><span class="token punctuation">(</span>COST<span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    T <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>  <span class="token comment"># 存放最小生成树的边</span>
+    mincost <span class="token operator">=</span> <span class="token number">0</span>  <span class="token comment"># 最小生成树的总成本</span>
+    NEAR <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">*</span> n  <span class="token comment"># NEAR数组</span>
+
+    <span class="token comment"># 选择初始边</span>
+    k<span class="token punctuation">,</span> l <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    mincost <span class="token operator">=</span> COST<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+    T<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> COST<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> COST<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            NEAR<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            NEAR<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token comment"># 重复直到所有顶点都被访问</span>
+    <span class="token keyword">for</span> _ <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        min_edge <span class="token operator">=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span>
+        j <span class="token operator">=</span> <span class="token number">0</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token comment">#找到下一个加入S的结点j</span>
+            <span class="token comment">#near[i] != 0 表示i有不在S中的邻接结点，然后找到cost最小的边的两个顶点</span>
+            <span class="token keyword">if</span> NEAR<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token keyword">and</span> COST<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>NEAR<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> min_edge<span class="token punctuation">:</span>
+                min_edge <span class="token operator">=</span> COST<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>NEAR<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">]</span>
+                j <span class="token operator">=</span> i
+		<span class="token comment">#将节点j和邻接结点j加入S，他们的边加入树</span>
+        T<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>j<span class="token punctuation">,</span> NEAR<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        mincost <span class="token operator">+=</span> min_edge
+        <span class="token comment">#加入S的标志，下一次遍历整个结点找入树的结点的时候就不会找到j</span>
+        NEAR<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span>
+		
+        <span class="token comment">#更新所有结点的near，如果结点k有最小长度的邻接结点near[k]的长大于k到j的长，那么设定j为k的有最小cost的邻近结点</span>
+        <span class="token keyword">for</span> k <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> NEAR<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span> <span class="token keyword">and</span> COST<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>NEAR<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token operator">&gt;</span> COST<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+                NEAR<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> j
+
+    <span class="token keyword">if</span> mincost <span class="token operator">&gt;=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'no spanning tree'</span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> T<span class="token punctuation">,</span> mincost
+
+<span class="token comment"># 示例用法</span>
+COST <span class="token operator">=</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">]</span>
+<span class="token punctuation">]</span>
+n <span class="token operator">=</span> <span class="token number">4</span>
+T<span class="token punctuation">,</span> mincost <span class="token operator">=</span> prim<span class="token punctuation">(</span>COST<span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'最小生成树的边:'</span><span class="token punctuation">,</span> T<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'最小生成树的总成本:'</span><span class="token punctuation">,</span> mincost<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>要点：S加入新结点j之后一定要更新所有结点的最小长度的邻接结点的状态，如果满足不在S中且原本的最小长度的邻接结点的连接边的长度小于到结点j的长度，更新此节点的最小长度的邻接结点的长度为这个结点到j的边的距离。</p>
+<h2 id="Kruskal算法"><a href="#Kruskal算法" class="headerlink" title="Kruskal算法"></a>Kruskal算法</h2><p>Kruskal假设图中边成本都已知，从所有边集合选出成本最小并且不会和已加入的边构成环的边加入最小生成树的边集，并且加入树的点集合，更新边集合。</p>
+<p>步骤：</p>
+<ul>
+<li>假设图G是一个森林，每个结点时一棵独立的树；</li>
+<li>将所有的边加入集合S；</li>
+<li>在S中找到最短的边（u，v），如果u和v不在同一棵树内，那么将u和v两树合并，将（u，v）加入生成树的边集；</li>
+<li>重复直到点都在同一棵树中。</li>
+</ul>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">kruskal</span><span class="token punctuation">(</span>E<span class="token punctuation">,</span>cost<span class="token punctuation">,</span>n<span class="token punctuation">,</span>T<span class="token punctuation">,</span>mincost<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    parent <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">*</span>n<span class="token comment">#索引代表顶点，值代表属于的集合，-1代表顶点是独立的树</span>
+    T <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    mincost <span class="token operator">=</span> <span class="token number">0</span>
+    
+    <span class="token keyword">def</span> <span class="token function">find</span><span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> u <span class="token operator">==</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> u<span class="token punctuation">;</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> find<span class="token punctuation">(</span>parent<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        
+   	<span class="token keyword">def</span> <span class="token function">union</span><span class="token punctuation">(</span>j<span class="token punctuation">,</span>k<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        parent<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> k<span class="token comment">#将j加入k的集合</span>
+        
+    edge <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> u <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> v <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> cost<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token builtin">float</span><span class="token punctuation">(</span><span class="token string">'inf'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                edge<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cost<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token comment">#将所有边加入边集合</span>
+    edge<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token comment">#将edge中的边按成本从小到大排序</span>
+    
+    <span class="token keyword">for</span> cost<span class="token punctuation">,</span>u<span class="token punctuation">,</span>v <span class="token keyword">in</span> edge<span class="token punctuation">:</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token builtin">len</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token operator">==</span> n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">break</span>
+        j <span class="token operator">=</span> find<span class="token punctuation">(</span>u<span class="token punctuation">)</span><span class="token comment">#查找u属于的集合</span>
+        k <span class="token operator">=</span> find<span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token comment">#查找k属于的集合</span>
+        <span class="token keyword">if</span> j <span class="token operator">!=</span> k<span class="token punctuation">:</span>
+            T<span class="token punctuation">.</span>append<span class="token punctuation">(</span>cost<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            mincost <span class="token operator">+=</span> cost<span class="token punctuation">[</span>u<span class="token punctuation">]</span><span class="token punctuation">[</span>v<span class="token punctuation">]</span>
+        	union<span class="token punctuation">(</span>u<span class="token punctuation">,</span>v<span class="token punctuation">)</span><span class="token comment">#u和v合并成一个集合</span>
+        
+   	<span class="token keyword">if</span> <span class="token builtin">len</span><span class="token punctuation">(</span>T<span class="token punctuation">)</span> <span class="token operator">!=</span> N<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">:</span>  <span class="token comment"># 如果最小生成树的边数不为n-1，则打印提示信息</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'no spanning tree'</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> T<span class="token punctuation">,</span> mincost  <span class="token comment"># 返回最小生成树的边集和成本</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>这里为了确保选取的边不构成一个环，采用了并查集（Union-Find）,即在同一个集合的顶点不能将这两顶点的边加入最小生成树的边集。初始化各个顶点的集合为-1表示独立，利用find找到要加入边集合的边的两顶点是否属于同一集合，如果属于同一集合，表示将构成环（你想想在一棵树里两子节点的父节点相同，这两个节点还有一条边，那么就闭环了）；如果不属于一个集合，那么两顶点的边加入边集，将这两个顶点放入同一个集合。</p>
 
                 
             </div>
@@ -551,7 +614,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/11/02/java-fu-xi/">https://sion258.github.io/2023/11/02/java-fu-xi/</a>
+                    <a href="https://sion258.github.io/2023/11/18/zui-xiao-sheng-cheng-shu/">https://sion258.github.io/2023/11/18/zui-xiao-sheng-cheng-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -588,7 +651,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/algorithm/">
+                                    <span class="chip bg-color">algorithm</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -756,17 +823,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/11/09/b-shu/">
+                <a href="/2023/11/18/zui-xiao-sheng-cheng-shu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Prime&amp;Kruskal">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Prime&amp;Kruskal</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -776,9 +844,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-18
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -786,6 +854,15 @@
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -797,13 +874,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/24/shu-ju-ku-zhuan-you-ming-ci-ji-he/">
+                <a href="/2023/11/16/dan-yuan-zui-duan-lu-jing-dijistra-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Dijistra">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Dijistra</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -814,7 +891,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-16
                             </span>
                         <span class="publish-author">
                             
@@ -823,6 +900,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
                 </div>
                 
             </div>

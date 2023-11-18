@@ -445,7 +445,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-11-02
+                    2023-11-09
                 </div>
                 
 
@@ -469,62 +469,86 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="JAVA复习"><a href="#JAVA复习" class="headerlink" title="JAVA复习"></a>JAVA复习</h1><ul>
-<li><p><strong>protected</strong>修饰的类方法只能被<strong>同一包的其他类或者子类</strong>访问，<strong>继承的类</strong>不能访问</p>
-</li>
-<li><p>public，protected，private，default(与protected类似)，final（类不能被继承，变量不能被修改）,s<strong>tatic（修饰的方法调用时通过类名，无需实例</strong>）,abstract（不能实例化）的,synchronized用法</p>
-</li>
-<li><p>java中的集合类（如Vector）可以用来存储任何类型的对象，且大小可以自动调整。不需要事先知道所存储对象的类型。</p>
-</li>
-<li><p>String类的对象在常量池中，一旦创建不能修改，StringBuffer可以进行修改，字符串的容量指的是字符串的长度不是个数，空字符和被删除的字符是不占容量的</p>
-</li>
-<li><p>JVM的虚拟机是自动进行，无法人为分配</p>
-</li>
-<li><p>super关键字是用来调用父类的有参数构造方法，而且必须在第一行实现，无参构造方法在子类可以无条件调用，只有有参的构造方法的父类在调用的时候会发生错误</p>
-</li>
-<li><p>调用start方法之后。线程进入Runable状态。由于存在调度和优先级的问题，还不一定能立即执行。调用wait方法后当前线程被终止，让出cpu使用权，直到notify来唤醒。调用yield方法后当前线程中断，随机调用一个线程，也包括档当前线程。</p>
-</li>
-<li><p>关于构造方法，构造方法的返回类型随意，名称一定与类名相同，可以带参数可以不带，可以定义多个构造函数，接受不同参数，返回类型可以相同</p>
-</li>
-<li><p>接口类的修饰符默认是public abstract，变量的修饰符默认是public static final，实现接口类必须实现所有方法，除非它也是抽象类，可以选择能只实现一部分方法</p>
-</li>
-<li><p>JFrame，WIndow，JDialog，JApplet都是顶层容器，JFrame，Window，JDialog的默认布局是Borderout，JPanel，JApplet是Flowerout</p>
-</li>
-<li><p>关于java里的冠宇集合框架：ArrayList的随机访问和随机访问效率高，Linklist的插入删除效率高</p>
-</li>
-<li><p>创建类的对象中先加载父类再加载子类，其中先加载静态方法再加载其他，这是因为静态方法的在初始化时就完成了（类的加载：加载-验证-准备-解析-初始化）</p>
-</li>
-<li><p>float类型直到在小数点后6到7位</p>
-</li>
-<li><p>this关键字时类在对象内部对自身的指代，表示当前正在执行的方法，只能在构造方法和静态方法中使用，this关键字可以指明同名的实例变量和局部变量中的实例变量，this关键字可以传参可以作为返回值</p>
-</li>
-<li><p>static修饰的方法是类方法，无需实例化，通过类名调用</p>
-</li>
-<li><p>JAVA的版本：JAVA2 EE，JAVA2 Card，JAVA2 ME，JAVA2 HE</p>
-</li>
-<li><p>“==“是地址判断，”equal“是值判断，值传递是单向，因调用方法而传入的参数是不会因为方法中的赋值操作而改变的</p>
-</li>
-<li><p>Character读取字符串，byte读取字符</p>
-</li>
-<li><p>组件可以有多个监听器，而且任意调用addXXListener方法多次，而且没有次序的区别</p>
-</li>
-<li><p>没有初始化的变量编译不能通过</p>
-</li>
-<li><p>环境变量包括class path，path，JAVA_HOME:jdk的安装位置</p>
-</li>
-<li><p>javac.exe是编译.java文件<br>java.class是执行编译好的.class文件<br>javadoc.exe是生成Java说明文档<br>jdb.exe是Java调试器<br>javaprof.exe是剖析工具</p>
-</li>
-<li><p>StringBuilder不是线程安全的，如果你只是在单线程中使用字符串缓冲区，那么s\StringBuilder的效率会更高些</p>
-</li>
-<li><p>java的三个默认类加载器是BootStrapClassLoader（在路径JAVA_HOME/jre的lib里的jar，负责加载java基础类），ExtensionClassLoader（在路径JAVA_HOME/jre/lib/ext和class，负责加载java扩展类），AppClassLoader（负责加载当前java应用的classpath中的所有类），ClassLoader使用的是<strong>双亲委托模型</strong>来搜索类的 ，向父加载器提交搜索委托，然后向子类查找。</p>
-</li>
-<li><p>classloader 加载类用的是<strong>全盘负责委托机制</strong>。 所谓全盘负责，即是当一个classloader加载一个Class的时候，这个Class所依赖的和引用的所有 Class也由这个classloader负责载入，除非是显式的使用另外一个classloader载入。<br>所以，当我们自定义的classlo ader加载成功了 com.company.MyClass以后，MyClass里所有依赖的class都由这个classLoader来加载完成</p>
-</li>
-<li><p>方法的重写（override）两同两小一大原则：<br>方法名相同，参数类型相同<br>子类返回类型小于等于父类方法返回类型，<br>子类抛出异常小于等于父类方法抛出异常，<br>子类访问权限大于等于父类方法访问权限</p>
-</li>
-<li><p>一旦一个共享变量（类的成员变量、类的静态成员变量）被volatile修饰之后，那么就具备了两层语义：<br>1）保证了不同线程对这个变量进行操作时的可见性，即一个线程修改了某个变量的值，这新值对其他线程来说是立即可见的。<br>2）禁止进行指令重排序</p>
+                <p>[TOC]</p>
+<h1 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h1><p>B树是一种平衡树，但是和AVL不同，B树不是二叉树，每个结点有至少两个分支。因此B树</p>
+<p>又叫多路平衡搜索树。</p>
+<p>对于AVL和RBT来说，自身的查找效率已经很高了，但是在具体应用时，面对海量数据，O(logn)的复杂度也会很大，树高仍然很高，因此B树作为一种可以容纳若干个关键字的数据结构，能大大减少树高，而且B树时绝对平衡的，即每一个叶子节点的高度都相同。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>我们定义B树是具有以下性质的数据结构:</p>
+<ul>
+<li>该树为空树；</li>
+<li>该树不为空树，那么定义一个m阶的B树: <ul>
+<li>每个内部结点至多有m个子树，即至多含有m-1个关键字；<ul>
+<li>若根节点不是终端节点，至少有两个子树；</li>
+<li>非叶子结点至少含有[m/2]-1(向上取整)个关键字；</li>
+<li>所有叶子结点的高度一致；</li>
+</ul>
 </li>
 </ul>
+</li>
+</ul>
+<p>例如，我们可以观察一个的B树：</p>
+<p>![](C:\Users\唐浩钏\Pictures\Camera Roll\QQ图片20231109172633.png)</p>
+<p>（图自CSDN博主哦吼，侵删致歉）我们可以观察到这是一棵4阶的B树，每个结点包含的关键字至少位1个，至多为3个，所有叶子节点都在同一高度上。</p>
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>在此之前我们要知道两个相邻子树有一个父关键字，和二叉树的父节点不同，但实际上，只是因为二叉树的每个结点只保存一个关键字导致的。</p>
+<p>对于新增结点，我们要思考是否会破坏B树性质。</p>
+<p>首先我们需要查找该关键字是否存在，不存在，则创建关键字插入。</p>
+<ul>
+<li><p>如果插入的结点关键字个数小于m-1，那么直接插入，因为这不会引起任何破坏。</p>
+</li>
+<li><p>如果关键字个数不小于m-1，那么插入之后，破坏了“每个内部节点至多含有m-1个关键字”，那么我们需要进行以下操作：</p>
+<ul>
+<li>以该关键字序列的中间的关键字为划分，分裂为两部分，中间的关键字上升至父关键字；</li>
+</ul>
+</li>
+<li><p>父节点新增结点，重复上述步骤，直到满足条件。</p>
+</li>
+</ul>
+<p>这样一来就保证了各项性质。</p>
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>对于删除，我们考虑该结点是否是叶子结点。另外删除操作可能引发关键字少于[m/2]</p>
+<p>-1个，因此需要维护。</p>
+<h3 id="删除的是叶子结点的关键字"><a href="#删除的是叶子结点的关键字" class="headerlink" title="删除的是叶子结点的关键字"></a>删除的是叶子结点的关键字</h3><ul>
+<li><p>第一，如果删除之后的关键字个数不小于[m/2]-1，那么直接删除；</p>
+</li>
+<li><p>第二，如果删除之后的关键字个数少于[m/2]-1个：</p>
+<ul>
+<li>下沉父关键字；</li>
+<li>相邻兄弟结点的最左（右）关键字上浮成为父关键字</li>
+</ul>
+<p>这里思考一下，万一兄弟节点也不够用呢？</p>
+<p>我们重新讨论，将第二步的操作再细分吧。</p>
+</li>
+<li><p>第一，如果删除之后的关键字个数不小于[m/2]-1，那么直接删除；</p>
+</li>
+<li><p>第二，如果删除之后的关键字个数少于[m/2]-1个：</p>
+<ul>
+<li>当相邻兄弟关键字个数大于[m/2]-1个：<ul>
+<li>如果左兄弟关键字够用，将和左兄弟的父关键字下沉，左兄弟的最右关键字上浮；</li>
+<li>如果右兄弟关键字够用，将和右兄弟的父关键字上浮，右兄弟的最左关键字上浮；</li>
+<li>都够用随便用；</li>
+</ul>
+</li>
+<li>当相邻兄弟关键字个数都小于[m/2]-1个：<ul>
+<li>和左兄弟合并，俩个兄弟的父关键字下沉。由于相邻兄弟的关键字都不足，那么我们可以想到，兄弟此时关键字为[m/2]-1,自身也是[m/2]-1（不然不会进行不够用的讨论），合起来的关键字数为m-2（或者m-1，因为这是向上取整符号）个，合并之后，父关键字需要下沉，删除需要删除的关键字。此时关键字数量为m-2，满足至多为m-1个关键字。</li>
+<li>和右兄弟同理。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>这时父节点的关键字减少1，如果少于[m/2]-1个：</p>
+<ul>
+<li>双亲是根节点，删除根节点，将合并后的新节点成为根；</li>
+<li>双亲不是根节点，重复步骤，直到满足性质或者到达根节点。</li>
+</ul>
+</li>
+</ul>
+<p>这里我们讨论是一种</p>
+<p>![](C:\Users\唐浩钏\Pictures\Screenshots\屏幕截图 2023-11-09 174042.png)</p>
+<p>假设这是一棵5阶的B树的一部分，这里我们删除12，需要向兄弟借用一个关键字，23下沉，25上浮</p>
+<p>![](C:\Users\唐浩钏\Pictures\Screenshots\屏幕截图 2023-11-09 174800.png)</p>
+<p>假设这是一个5阶子树的一部分，这里删除40，左右兄弟都不够用，那么合并左兄弟和本结点，36作为两兄弟的父关键字下沉，这里父节点缺失一个关键字后满足B树性质，不需要再重复步骤。</p>
+<p>![](C:\Users\唐浩钏\Pictures\Screenshots\屏幕截图 2023-11-09 175402.png)</p>
+<p>![](C:\Users\唐浩钏\Pictures\Screenshots\屏幕截图 2023-11-09 175532.png)</p>
+<h3 id="删除的不是叶子结点的关键字"><a href="#删除的不是叶子结点的关键字" class="headerlink" title="删除的不是叶子结点的关键字"></a>删除的不是叶子结点的关键字</h3><p>将该关键字的直接前驱（左子树的最右）或者直接后继（右子树的最左）上浮，此时删除的问题相当于交给了子树，子树的关键字上浮导致子树的关键字减一，那么进行删除的是叶子结点的关键字的步骤，将问题转换为第一种情况。</p>
 
                 
             </div>
@@ -551,7 +575,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://sion258.github.io/2023/11/02/java-fu-xi/">https://sion258.github.io/2023/11/02/java-fu-xi/</a>
+                    <a href="https://sion258.github.io/2023/11/09/b-shu/">https://sion258.github.io/2023/11/09/b-shu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -760,13 +784,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2023/11/09/b-shu/">
+                <a href="/2023/11/16/dan-yuan-zui-duan-lu-jing-dijistra-suan-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Dijistra">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">Dijistra</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -777,7 +801,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-11-16
                         </span>
                         <span class="publish-author">
                             
@@ -786,6 +810,14 @@
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/algorithm/">
+                        <span class="chip bg-color">algorithm</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -797,7 +829,7 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/10/24/shu-ju-ku-zhuan-you-ming-ci-ji-he/">
+                <a href="/2023/11/02/java-fu-xi/">
                     <div class="card-image">
                         
                         
@@ -814,7 +846,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-10-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-11-02
                             </span>
                         <span class="publish-author">
                             
